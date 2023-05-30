@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/drawable_ic_back.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/drawable/ic_back.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.cooke.app-merged_res-60:/layout_activity_register.xml.flat",
+        "source": "com.example.cooke.app-main-62:/layout/activity_register.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-pngs-55:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/xml_backup_rules.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/drawable_text_background.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/drawable/text_background.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/layout_activity_main.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/layout_activity_register.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/layout/activity_register.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-merged_res-60:/layout_activity_login.xml.flat",
+        "source": "/Users/tiansibatuara/.gradle/daemon/7.4/com.example.cooke.app-main-62:/layout/activity_login.xml"
+    }
+]
