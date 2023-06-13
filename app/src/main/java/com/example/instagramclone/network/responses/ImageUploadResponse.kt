@@ -1,6 +1,8 @@
 package com.example.instagramclone.network.responses
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class ImageUploadResponse(
 
@@ -14,16 +16,17 @@ data class ImageUploadResponse(
 	val status: Int? = null
 )
 
+@Parcelize
 data class Nutrition(
 
 	@field:SerializedName("sodium_mg")
 	val sodiumMg: Int? = null,
 
 	@field:SerializedName("serat_g")
-	val seratG: Any? = null,
+	val seratG: Double? = null,
 
 	@field:SerializedName("lemak_total_g")
-	val lemakTotalG: Any? = null,
+	val lemakTotalG: Double? = null,
 
 	@field:SerializedName("vitamin_a")
 	val vitaminA: Int? = null,
@@ -47,10 +50,10 @@ data class Nutrition(
 	val kalsiumMg: Int? = null,
 
 	@field:SerializedName("zat_besi_mg")
-	val zatBesiMg: Any? = null,
+	val zatBesiMg: Double? = null,
 
 	@field:SerializedName("gula_g")
-	val gulaG: Any? = null,
+	val gulaG: Double? = null,
 
 	@field:SerializedName("vitamin_k")
 	val vitaminK: Int? = null,
@@ -62,11 +65,11 @@ data class Nutrition(
 	val kaloriKkal: Int? = null,
 
 	@field:SerializedName("protein_g")
-	val proteinG: Any? = null,
+	val proteinG: Double? = null,
 
 	@field:SerializedName("deskripsi")
 	val deskripsi: String? = null
-)
+) : Parcelable
 
 data class Data(
 

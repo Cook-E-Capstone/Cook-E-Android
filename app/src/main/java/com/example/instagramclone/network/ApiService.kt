@@ -1,9 +1,9 @@
 package com.example.instagramclone.network
 
-import com.example.instagramclone.LoginResponse
 import com.example.instagramclone.StoryResponse
 import com.example.instagramclone.network.responses.CommunityResponse
 import com.example.instagramclone.network.responses.CookeLoginResponse
+import com.example.instagramclone.network.responses.CookeRegisterResponse
 import com.example.instagramclone.network.responses.FileUploadResponse
 import com.example.instagramclone.network.responses.ImageUploadResponse
 import com.example.instagramclone.network.responses.RegisterResponse
@@ -63,7 +63,7 @@ interface ApiService {
         @Field("email") email: String,
         @Field("name") name: String,
         @Field("password") password: String,
-    ): Call<RegisterResponse>
+    ): Call<CookeRegisterResponse>
 
     @GET("community")
     fun getAllPosts(

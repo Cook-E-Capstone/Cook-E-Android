@@ -1,5 +1,6 @@
 package com.example.instagramclone.activities
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -9,12 +10,22 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
+import com.example.instagramclone.UserPreferences
 import com.example.instagramclone.databinding.ActivityRegisterBinding
+import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.network.ApiConfig
+import com.example.instagramclone.network.responses.CookeRegisterResponse
 import com.example.instagramclone.network.responses.RegisterResponse
+import com.example.instagramclone.utils.ViewModelFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -82,28 +93,42 @@ class RegisterActivity : AppCompatActivity() {
                 .show()
         } else {
             showLoading(true)
-            val client = ApiConfig.getApiService().register(name, email, password)
-            client.enqueue(object : Callback<RegisterResponse> {
+            val client = ApiConfig.getApiService().register(email, name, password)
+            client.enqueue(object : Callback<CookeRegisterResponse> {
                 override fun onResponse(
-                    call: Call<RegisterResponse>,
-                    response: Response<RegisterResponse>
+                    call: Call<CookeRegisterResponse>,
+                    response: Response<CookeRegisterResponse>
                 ) {
                     val responseBody = response.body()
-                    if (response.isSuccessful && responseBody != null && !responseBody.error) {
+                    if (response.isSuccessful && responseBody != null) {
                         Log.e(TAG, responseBody.toString())
-                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+//                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+//                        startActivity(intent)
+//                        finish()
+
+                        val pref = UserPreferences.getInstance(dataStore)
+                        val authViewModel = ViewModelProvider(this@RegisterActivity, ViewModelFactory(pref, this@RegisterActivity,"")).get(
+                            AuthViewModel::class.java
+                        )
+
+                        authViewModel.saveAuthSetting(responseBody.data?.user?.name!!, responseBody.data?.user?.id!!, responseBody.data?.token!!)
+                        showLoading(false)
+                        Toast.makeText(this@RegisterActivity, "User created", Toast.LENGTH_SHORT).show()
+
+                        val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                         startActivity(intent)
                         finish()
-                        Toast.makeText(this@RegisterActivity, "User created", Toast.LENGTH_SHORT).show()
+
                     } else {
                         showLoading(false)
                         Toast.makeText(this@RegisterActivity, response.message(), Toast.LENGTH_SHORT)
                             .show()
-                        Log.e(TAG, "onFailure: ${response.message()}")
+                        Log.e(TAG, "onFailure: ${response.body()}")
                     }
                 }
 
-                override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                override fun onFailure(call: Call<CookeRegisterResponse>, t: Throwable) {
                     showLoading(false)
                     Toast.makeText(this@RegisterActivity, t.message.toString(), Toast.LENGTH_SHORT)
                         .show()

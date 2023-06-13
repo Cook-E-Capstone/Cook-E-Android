@@ -12,8 +12,6 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.example.instagramclone.LoginResponse
-import com.example.instagramclone.LoginResult
 import com.example.instagramclone.UserPreferences
 import com.example.instagramclone.databinding.ActivityLoginBinding
 import com.example.instagramclone.models.AuthViewModel
@@ -98,7 +96,7 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 } else {
-                    Log.e(TAG, "onFailure: ${response.message()}")
+                    Log.e(TAG, "onFailure: ${response}")
                     showLoading(false)
                     binding.edLoginPassword.error = "Invalid username or password"
                 }
