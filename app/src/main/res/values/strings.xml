@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">CookE</string>
+    <string name="app_name">Storygram</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_text">Login</string>
+    <string name="username_hint">Username</string>
+    <string name="register_button_text">Register</string>
+    <string name="camera_x">CameraX</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="upload">Upload</string>
+    <string name="description_hint">Description</string>
+    <string name="logout_button_text">Logout</string>
+    <string name="tagline">Sign up to see stories from your friends.</string>
+    <string name="post_headline">Post your story</string>
+    <string name="text_back_button">Back button</string>
+    <string name="text_to_register">Don\'t have an account?&#160;</string>
+    <string name="content_desc_post_button">Post photo button</string>
+    <string name="text_to_login">Already have an account?&#160;</string>
+    <string name="title_activity_maps">Where are them?</string>
+    <string name="retry">Retry</string>
 </resources>
