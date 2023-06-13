@@ -27,8 +27,8 @@ class CameraActivity : AppCompatActivity() {
         binding = ActivityCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.captureImage.setOnClickListener { takePhoto() }
-        binding.switchCamera.setOnClickListener {
+        binding.ivCaptureImage.setOnClickListener { takePhoto() }
+        binding.ivSwitchCamera.setOnClickListener {
             cameraSelector = if (cameraSelector.equals(CameraSelector.DEFAULT_BACK_CAMERA)) CameraSelector.DEFAULT_FRONT_CAMERA
             else CameraSelector.DEFAULT_BACK_CAMERA
             startCamera()

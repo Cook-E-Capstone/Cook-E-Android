@@ -124,6 +124,9 @@ class PostActivity : AppCompatActivity() {
                         val responseBody = response.body()
                         if (responseBody != null) {
                             Toast.makeText(this@PostActivity, responseBody.data?.name, Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@PostActivity, ResultActivity::class.java)
+                            intent.putExtra("data", responseBody.data?.nutrition)
+                            startActivity(intent)
 //                            finish()
                         }
                     } else {
