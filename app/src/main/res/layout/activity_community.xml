@@ -5,12 +5,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activities.MainActivity"
+    tools:context=".activities.CommunityActivity"
     >
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,7 +20,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/red"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/AppTheme">
 
@@ -72,7 +73,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/item_row_story" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -108,7 +109,6 @@
                 app:tint="@color/white" />
 
             <ImageButton
-                android:id="@+id/action_profile"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@null"
@@ -117,4 +117,19 @@
                 app:tint="@color/white" />
         </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/action_post"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end|center"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/red"
+        android:src="@drawable/ic_add"
+        android:tintMode="@color/white"
+        app:fabSize="normal"
+        android:contentDescription="@string/content_desc_post_button"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

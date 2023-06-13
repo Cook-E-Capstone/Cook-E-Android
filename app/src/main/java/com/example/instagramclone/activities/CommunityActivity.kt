@@ -2,35 +2,31 @@ package com.example.instagramclone.activities
 
 import android.content.Context
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.instagramclone.ListStoryItem
+import com.example.instagramclone.R
 import com.example.instagramclone.UserPreferences
 import com.example.instagramclone.adapters.CommunityPostAdapter
-import com.example.instagramclone.adapters.ListStoryAdapter
-import com.example.instagramclone.adapters.LoadingStateAdapter
-import com.example.instagramclone.adapters.StoryAdapter
+import com.example.instagramclone.databinding.ActivityCommunityBinding
 import com.example.instagramclone.databinding.ActivityMainBinding
 import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.models.MainViewModel
 import com.example.instagramclone.network.responses.CommunityItem
 import com.example.instagramclone.utils.ViewModelFactory
-import java.util.regex.Pattern
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
-class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+class CommunityActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityCommunityBinding
     private var token : String = ""
 
 //    private val mainViewModel by viewModels<MainViewModel>()
@@ -43,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityCommunityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val layoutManager = LinearLayoutManager(this)
@@ -88,8 +84,8 @@ class MainActivity : AppCompatActivity() {
 
 
 ////
-        binding.myFloatingButton.setOnClickListener {
-            val postIntent = Intent(this, PostActivity::class.java)
+        binding.actionPost.setOnClickListener {
+            val postIntent = Intent(this, CommunityPostActivity::class.java)
             startActivity(postIntent)
         }
 //
@@ -106,14 +102,6 @@ class MainActivity : AppCompatActivity() {
 //        binding.actionLogout.setOnClickListener {
 //            authViewModel.removeAuthSetting()
 //        }
-
-        // NOTES : INI CUMA COBA2 SAJA,
-        // NANTI DIGANTI KE PROFILE ACTIVITY
-
-        binding.actionProfile.setOnClickListener {
-            val communityIntent = Intent(this, CommunityActivity::class.java)
-            startActivity(communityIntent)
-        }
 
 
 
@@ -177,23 +165,3 @@ class MainActivity : AppCompatActivity() {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
