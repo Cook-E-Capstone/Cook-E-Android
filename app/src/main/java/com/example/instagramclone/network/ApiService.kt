@@ -1,6 +1,7 @@
 package com.example.instagramclone.network
 
 import com.example.instagramclone.StoryResponse
+import com.example.instagramclone.network.responses.CommunityPostResponse
 import com.example.instagramclone.network.responses.CommunityResponse
 import com.example.instagramclone.network.responses.CookeLoginResponse
 import com.example.instagramclone.network.responses.CookeRegisterResponse
@@ -69,6 +70,17 @@ interface ApiService {
     fun getAllPosts(
         @Header("Authorization") token: String,
     ) : Call<CommunityResponse>
+
+    @Multipart
+    @POST("community")
+    fun postCommunity(
+        @Header("Authorization") token: String,
+        @Part file: MultipartBody.Part,
+        @Part("title") title: RequestBody,
+        @Part("content") content: RequestBody,
+
+        ): Call<CommunityPostResponse>
+
 
 
 //    @Multipart
