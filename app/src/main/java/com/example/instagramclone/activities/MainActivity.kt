@@ -1,5 +1,6 @@
 package com.example.instagramclone.activities
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -39,6 +40,9 @@ class MainActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_USER = "extra_user"
         const val TAG = "MODAN"
+
+        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+        private const val REQUEST_CODE_PERMISSIONS = 10
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -103,9 +107,9 @@ class MainActivity : AppCompatActivity() {
 //
 //        }
 
-//        binding.actionLogout.setOnClickListener {
-//            authViewModel.removeAuthSetting()
-//        }
+        binding.actionLogout.setOnClickListener {
+            authViewModel.removeAuthSetting()
+        }
 
         // NOTES : INI CUMA COBA2 SAJA,
         // NANTI DIGANTI KE PROFILE ACTIVITY

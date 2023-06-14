@@ -7,20 +7,26 @@ import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.widget.AppCompatEditText
-import com.example.instagramclone.R
 
 class PasswordEditText : AppCompatEditText, View.OnTouchListener {
 
-    constructor(context: Context) : super(context) {
+    constructor(context: Context) :
+            super(context) {
         init()
     }
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
+    constructor(context: Context,
+                attrs: AttributeSet) :
+            super(context,
+                attrs) {
         init()
     }
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context,
+                attrs: AttributeSet,
+                defStyleAttr: Int) :
+            super(context,
+                attrs,
+                defStyleAttr) {
         init()
     }
 
@@ -41,13 +47,12 @@ class PasswordEditText : AppCompatEditText, View.OnTouchListener {
             }
             override fun afterTextChanged(s: Editable) {
                 error = if (s.length < 8) {
-                    "Password must be at least 8 characters"
+                    "Password length must be more than 8 characters"
                 } else {
                     null
                 }
             }
         })
-
     }
 
     override fun onTouch(v: View?, event: MotionEvent): Boolean {
