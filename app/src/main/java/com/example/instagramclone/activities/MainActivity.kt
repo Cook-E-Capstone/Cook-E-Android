@@ -3,12 +3,16 @@ package com.example.instagramclone.activities
 import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -45,10 +49,40 @@ class MainActivity : AppCompatActivity() {
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == MainActivity.REQUEST_CODE_PERMISSIONS) {
+            if (!allPermissionsGranted()) {
+                Toast.makeText(
+                    this,
+                    "Tidak mendapatkan permission.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                finish()
+            }
+        }
+    }
+
+    private fun allPermissionsGranted() = MainActivity.REQUIRED_PERMISSIONS.all {
+        ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (!allPermissionsGranted()) {
+            ActivityCompat.requestPermissions(
+                this,
+                MainActivity.REQUIRED_PERMISSIONS,
+                MainActivity.REQUEST_CODE_PERMISSIONS
+            )
+        }
 
         val layoutManager = LinearLayoutManager(this)
         binding.rvStory.layoutManager = layoutManager
@@ -97,19 +131,19 @@ class MainActivity : AppCompatActivity() {
             startActivity(postIntent)
         }
 //
-//        binding.actionMap.setOnClickListener {
-//            val mapIntent = Intent(this, MapsActivity::class.java)
+        binding.actionMap.setOnClickListener {
+            val recipeIntent = Intent(this, RecipeActivity::class.java)
 //            mainViewModel.listStory.observe(this) {
 //                Log.d(TAG, it.toString())
 //                mapIntent.putParcelableArrayListExtra("extra_story", ArrayList(it))
 //            }
-//            startActivity(mapIntent)
-//
-//        }
+            startActivity(recipeIntent)
 
-        binding.actionLogout.setOnClickListener {
-            authViewModel.removeAuthSetting()
         }
+
+//        binding.actionLogout.setOnClickListener {
+//            authViewModel.removeAuthSetting()
+//        }
 
         // NOTES : INI CUMA COBA2 SAJA,
         // NANTI DIGANTI KE PROFILE ACTIVITY

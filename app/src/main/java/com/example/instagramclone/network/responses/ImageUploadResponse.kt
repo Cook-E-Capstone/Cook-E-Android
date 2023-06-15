@@ -77,7 +77,7 @@ data class Data(
 	val nutrition: Nutrition? = null,
 
 	@field:SerializedName("confidence")
-	val confidence: Any? = null,
+	val confidence: Double? = null,
 
 	@field:SerializedName("name")
 	val name: String? = null

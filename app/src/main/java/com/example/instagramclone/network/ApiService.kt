@@ -1,12 +1,14 @@
 package com.example.instagramclone.network
 
 import com.example.instagramclone.StoryResponse
+import com.example.instagramclone.network.responses.CommunityDetailResponse
 import com.example.instagramclone.network.responses.CommunityPostResponse
 import com.example.instagramclone.network.responses.CommunityResponse
 import com.example.instagramclone.network.responses.CookeLoginResponse
 import com.example.instagramclone.network.responses.CookeRegisterResponse
 import com.example.instagramclone.network.responses.FileUploadResponse
 import com.example.instagramclone.network.responses.ImageUploadResponse
+import com.example.instagramclone.network.responses.RecipeResponse
 import com.example.instagramclone.network.responses.RegisterResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -27,6 +29,12 @@ interface ApiService {
         @Query("size") size: Int,
         @Query("location") location: Int? = 1
     ) : StoryResponse
+
+    @GET("community/{id}")
+    fun getDetailPost(
+        @Header("Authorization") token: String,
+        @Path("id") id: String
+    ) : Call<CommunityDetailResponse>
 
 //    @FormUrlEncoded
 //    @POST("login")
@@ -50,6 +58,14 @@ interface ApiService {
         @Part file: MultipartBody.Part,
 //        @Part("description") description: RequestBody,
     ): Call<ImageUploadResponse>
+
+    @GET("ml/recipe")
+    fun searchRecipes(
+        @Header("Authorization") token: String,
+        @Query("query") query: String,
+        @Query("limit") limit: Int
+    ): Call<RecipeResponse>
+
 
     @FormUrlEncoded
     @POST("user/login")
@@ -80,6 +96,8 @@ interface ApiService {
         @Part("content") content: RequestBody,
 
         ): Call<CommunityPostResponse>
+
+
 
 
 
