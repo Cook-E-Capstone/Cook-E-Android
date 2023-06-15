@@ -25,7 +25,7 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "se
 class StoryAdapter(private val listStory : List<ListStoryItem>) : RecyclerView.Adapter<StoryAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(viewGroup.context).inflate(
-        R.layout.item_row_story, viewGroup, false))
+        R.layout.item_row_post, viewGroup, false))
 
     override fun getItemCount() = listStory.size
 

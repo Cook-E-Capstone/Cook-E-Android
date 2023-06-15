@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -80,6 +81,12 @@ class PostActivity : AppCompatActivity() {
 //                REQUEST_CODE_PERMISSIONS
 //            )
 //        }
+
+        Log.d("TEST", "${binding.previewImageView.drawable == null}")
+
+//        showScanButton(binding.previewImageView.drawable == null)
+
+
         binding.cameraXButton.setOnClickListener { startCameraX() }
         binding.actionBack.setOnClickListener {
             finish()
@@ -94,6 +101,10 @@ class PostActivity : AppCompatActivity() {
             binding.uploadButton.setOnClickListener { uploadImage(authData.token) }
         }
     }
+
+//    private fun showScanButton(isImageExist: Boolean) {
+//        binding.uploadButton.visibility = if (isImageExist) View.VISIBLE else View.GONE
+//    }
 
     private fun startCameraX() {
         val intent = Intent(this, CameraActivity::class.java)

@@ -17,7 +17,7 @@ import com.example.instagramclone.network.responses.CommunityItem
 class CommunityPostAdapter(private val listPost : List<CommunityItem>) : RecyclerView.Adapter<CommunityPostAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(viewGroup.context).inflate(
-        R.layout.item_row_story, viewGroup, false))
+        R.layout.item_row_post, viewGroup, false))
 
     override fun getItemCount() = listPost.size
 
