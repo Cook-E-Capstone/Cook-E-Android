@@ -75,38 +75,71 @@
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_row_story" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomNavigationView2"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/bg_bottom_navigation"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_height="56dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <ImageButton
+            android:id="@+id/action_home"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="12dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bottomNavigationView2"
+            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView2"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_home"
+            app:tint="?attr/colorPrimary" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+        <ImageButton
+            android:id="@+id/action_community"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="12dp"
+            app:layout_constraintStart_toEndOf="@id/action_home"
+            app:layout_constraintEnd_toStartOf="@id/action_scan"
+            app:layout_constraintTop_toTopOf="@id/bottomNavigationView2"
+            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView2"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_community"
+            app:tint="@color/black" />
 
-            <ImageButton
-                android:id="@+id/action_map"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_map"
-                app:tint="@color/white" />
+        <ImageButton
+            android:id="@+id/action_scan"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bottomNavigationView2"
+            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView2"
+            android:layout_marginHorizontal="90dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_camera_lens"
+            app:tint="@color/black" />
 
-            <ImageButton
-                android:id="@+id/my_floating_button"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginHorizontal="90dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_add"
-                app:tint="@color/white" />
+        <ImageButton
+            android:id="@+id/action_recipe"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="12dp"
+            app:layout_constraintStart_toEndOf="@id/action_scan"
+            app:layout_constraintEnd_toStartOf="@id/action_nutritionist"
+            app:layout_constraintTop_toTopOf="@id/bottomNavigationView2"
+            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView2"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_recipe"
+            app:tint="@color/black" />
 
+<<<<<<< Updated upstream
             <ImageButton
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -116,4 +149,86 @@
                 app:tint="@color/white" />
         </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+=======
+        <ImageButton
+            android:id="@+id/action_nutritionist"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bottomNavigationView2"
+            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView2"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_nutritionist"
+            app:tint="@color/black" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottomNavigationView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:background="@drawable/bg_bottom_navigation"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center">-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/action_home"-->
+<!--                android:layout_width="56dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:padding="12dp"-->
+<!--                android:background="@null"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:src="@drawable/ic_map"-->
+<!--                app:tint="@color/white" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/action_community"-->
+<!--                android:layout_width="56dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:padding="12dp"-->
+<!--                android:background="@null"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:src="@drawable/ic_user"-->
+<!--                app:tint="@color/white" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/action_scan"-->
+<!--                android:layout_width="56dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:padding="12dp"-->
+<!--                android:layout_marginHorizontal="90dp"-->
+<!--                android:background="@null"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:src="@drawable/ic_add"-->
+<!--                app:tint="@color/white" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/action_recipe"-->
+<!--                android:layout_width="56dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:padding="12dp"-->
+<!--                android:background="@null"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:src="@drawable/ic_user"-->
+<!--                app:tint="@color/white" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/action_profile"-->
+<!--                android:layout_width="56dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:padding="12dp"-->
+<!--                android:background="@null"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:src="@drawable/ic_user"-->
+<!--                app:tint="@color/white" />-->
+<!--        </LinearLayout>-->
+<!--    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+>>>>>>> Stashed changes
 </androidx.constraintlayout.widget.ConstraintLayout>

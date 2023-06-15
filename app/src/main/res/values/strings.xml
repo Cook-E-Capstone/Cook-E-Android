@@ -19,4 +19,10 @@
     <string name="text_to_login">Already have an account?&#160;</string>
     <string name="title_activity_maps">Where are them?</string>
     <string name="retry">Retry</string>
+    <string name="kalori">Kalori</string>
+    <string name="lemak">Lemak</string>
+    <string name="karbohidrat">Karbohidrat</string>
+    <string name="protein">Protein</string>
+    <string name="serat">Serat</string>
+    <string name="kolesterol">Kolesterol</string>
 </resources>
