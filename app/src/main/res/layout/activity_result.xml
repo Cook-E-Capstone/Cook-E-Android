@@ -45,9 +45,11 @@
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <TextView
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="28sp"
+        android:textSize="30sp"
+        android:fontFamily="@font/inter_bold"
         app:layout_constraintBottom_toBottomOf="@id/iv_result_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,6 +58,7 @@
         />
 
     <HorizontalScrollView
+        android:id="@+id/sv_nutrition"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,6 +103,25 @@
                 android:text="Serat" />
         </LinearLayout>
     </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/header_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sv_nutrition" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/header_desc"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo odio aenean sed adipiscing. Proin nibh nisl condimentum id venenatis a condimentum. Magna ac placerat vestibulum lectus mauris. Placerat vestibulum lectus mauris ultrices eros in. Amet dictum sit amet justo donec enim diam vulputate. Amet consectetur adipiscing elit ut aliquam purus sit. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit. Magna etiam." />
 
 
 

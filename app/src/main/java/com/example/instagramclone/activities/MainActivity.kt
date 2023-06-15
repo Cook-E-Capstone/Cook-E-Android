@@ -1,30 +1,32 @@
 package com.example.instagramclone.activities
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.instagramclone.ListStoryItem
+import com.example.instagramclone.R
 import com.example.instagramclone.UserPreferences
 import com.example.instagramclone.adapters.CommunityPostAdapter
-import com.example.instagramclone.adapters.ListStoryAdapter
-import com.example.instagramclone.adapters.LoadingStateAdapter
-import com.example.instagramclone.adapters.StoryAdapter
+import com.example.instagramclone.adapters.SliderAdapter
 import com.example.instagramclone.databinding.ActivityMainBinding
 import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.models.MainViewModel
 import com.example.instagramclone.network.responses.CommunityItem
 import com.example.instagramclone.utils.ViewModelFactory
-import java.util.regex.Pattern
+import com.smarteist.autoimageslider.SliderView
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -33,18 +35,63 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var token : String = ""
 
+    // on below line we are creating a variable
+    // for our array list for storing our images.
+    lateinit var imageUrl: ArrayList<String>
+
+    // on below line we are creating
+    // a variable for our slider view.
+    lateinit var sliderView: SliderView
+
+    // on below line we are creating
+    // a variable for our slider adapter.
+    lateinit var sliderAdapter: SliderAdapter
+
 //    private val mainViewModel by viewModels<MainViewModel>()
 
 
     companion object {
         const val EXTRA_USER = "extra_user"
         const val TAG = "MODAN"
+
+        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+        private const val REQUEST_CODE_PERMISSIONS = 10
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == MainActivity.REQUEST_CODE_PERMISSIONS) {
+            if (!allPermissionsGranted()) {
+                Toast.makeText(
+                    this,
+                    "Tidak mendapatkan permission.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                finish()
+            }
+        }
+    }
+
+    private fun allPermissionsGranted() = MainActivity.REQUIRED_PERMISSIONS.all {
+        ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (!allPermissionsGranted()) {
+            ActivityCompat.requestPermissions(
+                this,
+                MainActivity.REQUIRED_PERMISSIONS,
+                MainActivity.REQUEST_CODE_PERMISSIONS
+            )
+        }
 
         val layoutManager = LinearLayoutManager(this)
         binding.rvStory.layoutManager = layoutManager
@@ -93,20 +140,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(postIntent)
         }
 //
-<<<<<<< Updated upstream
-//        binding.actionMap.setOnClickListener {
-//            val mapIntent = Intent(this, MapsActivity::class.java)
-=======
+
         binding.actionRecipe.setOnClickListener {
             val recipeIntent = Intent(this, RecipeActivity::class.java)
->>>>>>> Stashed changes
+
 //            mainViewModel.listStory.observe(this) {
 //                Log.d(TAG, it.toString())
 //                mapIntent.putParcelableArrayListExtra("extra_story", ArrayList(it))
 //            }
-//            startActivity(mapIntent)
-//
-//        }
+            startActivity(recipeIntent)
+
+        }
 
         binding.actionCommunity.setOnClickListener {
             val communityIntent = Intent(this, CommunityActivity::class.java)
@@ -117,11 +161,11 @@ class MainActivity : AppCompatActivity() {
 //            authViewModel.removeAuthSetting()
 //        }
 
-<<<<<<< Updated upstream
-=======
-        // NOTES : INI CUMA COBA2 SAJA,
-        // NANTI DIGANTI KE PROFILE ACTIVITY
 
+        binding.actionProfile.setOnClickListener {
+            val profileIntent = Intent(this, ProfileActivity::class.java)
+            startActivity(profileIntent)
+        }
 
 
         // SLIDER
@@ -164,7 +208,7 @@ class MainActivity : AppCompatActivity() {
         // auto cycle to start our cycle.
         sliderView.startAutoCycle()
 
->>>>>>> Stashed changes
+
 
 
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
@@ -174,6 +218,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+
+
 
     }
 

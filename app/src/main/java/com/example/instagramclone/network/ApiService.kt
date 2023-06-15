@@ -1,12 +1,14 @@
 package com.example.instagramclone.network
 
 import com.example.instagramclone.StoryResponse
+import com.example.instagramclone.network.responses.CommunityDetailResponse
+import com.example.instagramclone.network.responses.CommunityPostResponse
 import com.example.instagramclone.network.responses.CommunityResponse
 import com.example.instagramclone.network.responses.CookeLoginResponse
 import com.example.instagramclone.network.responses.CookeRegisterResponse
-import com.example.instagramclone.network.responses.FileUploadResponse
 import com.example.instagramclone.network.responses.ImageUploadResponse
-import com.example.instagramclone.network.responses.RegisterResponse
+import com.example.instagramclone.network.responses.ProfileResponse
+import com.example.instagramclone.network.responses.RecipeResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -27,6 +29,12 @@ interface ApiService {
         @Query("location") location: Int? = 1
     ) : StoryResponse
 
+    @GET("community/{id}")
+    fun getDetailPost(
+        @Header("Authorization") token: String,
+        @Path("id") id: String
+    ) : Call<CommunityDetailResponse>
+
 //    @FormUrlEncoded
 //    @POST("login")
 //    fun login(
@@ -42,6 +50,11 @@ interface ApiService {
 //        @Field("password") password: String,
 //    ): Call<RegisterResponse>
 
+    @GET("user/profile")
+    fun getUser(
+        @Header("Authorization") token: String,
+    ) : Call<ProfileResponse>
+
     @Multipart
     @POST("ml/image")
     fun uploadImage(
@@ -49,6 +62,14 @@ interface ApiService {
         @Part file: MultipartBody.Part,
 //        @Part("description") description: RequestBody,
     ): Call<ImageUploadResponse>
+
+    @GET("ml/recipe")
+    fun searchRecipes(
+        @Header("Authorization") token: String,
+        @Query("query") query: String,
+        @Query("limit") limit: Int
+    ): Call<RecipeResponse>
+
 
     @FormUrlEncoded
     @POST("user/login")
@@ -69,6 +90,19 @@ interface ApiService {
     fun getAllPosts(
         @Header("Authorization") token: String,
     ) : Call<CommunityResponse>
+
+    @Multipart
+    @POST("community")
+    fun postCommunity(
+        @Header("Authorization") token: String,
+        @Part file: MultipartBody.Part,
+        @Part("title") title: RequestBody,
+        @Part("content") content: RequestBody,
+
+        ): Call<CommunityPostResponse>
+
+
+
 
 
 //    @Multipart

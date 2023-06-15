@@ -19,17 +19,13 @@ import com.example.instagramclone.ListStoryItem
 import com.example.instagramclone.R
 import com.example.instagramclone.activities.DetailActivity
 import com.example.instagramclone.getElapsedTimeSinceDate
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Locale
-import java.util.TimeZone
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class StoryAdapter(private val listStory : List<ListStoryItem>) : RecyclerView.Adapter<StoryAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(viewGroup.context).inflate(
-        R.layout.item_row_story, viewGroup, false))
+        R.layout.item_row_post, viewGroup, false))
 
     override fun getItemCount() = listStory.size
 

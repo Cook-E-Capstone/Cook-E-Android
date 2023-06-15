@@ -5,24 +5,22 @@ import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.location.Geocoder
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.instagramclone.ListStoryItem
 import com.example.instagramclone.R
+import com.example.instagramclone.databinding.ActivityMapsBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
-import com.example.instagramclone.databinding.ActivityMapsBinding
-
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MapStyleOptions
-
+import com.google.android.gms.maps.model.MarkerOptions
 import java.io.IOException
 import java.util.Locale
 

@@ -7,23 +7,30 @@ import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.widget.AppCompatEditText
-import com.example.instagramclone.R
 import java.util.regex.Pattern
 
 class EmailEditText : AppCompatEditText, View.OnTouchListener {
 
     private val emailPattern = Pattern.compile("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+")
 
-    constructor(context: Context) : super(context) {
+    constructor(context: Context) :
+            super(context) {
         init()
     }
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
+    constructor(context:
+                Context,
+                attrs: AttributeSet) :
+            super(context,
+                attrs) {
         init()
     }
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context,
+                attrs: AttributeSet,
+                defStyleAttr: Int) :
+            super(context,
+                attrs,
+                defStyleAttr) {
         init()
     }
 
@@ -44,7 +51,7 @@ class EmailEditText : AppCompatEditText, View.OnTouchListener {
             override fun afterTextChanged(s: Editable) {
                 val email = s.toString().trim()
                 error = if (email.isNotEmpty() && !isEmailValid(email)) {
-                    "Invalid email format"
+                    "Email format is invalid"
                 } else {
                     null
                 }
@@ -52,11 +59,12 @@ class EmailEditText : AppCompatEditText, View.OnTouchListener {
         })
     }
 
-    override fun onTouch(v: View?, event: MotionEvent): Boolean {
-        return false
+    private fun isEmailValid(email: String): Boolean {
+        return emailPattern.matcher(email)
+            .matches()
     }
 
-    private fun isEmailValid(email: String): Boolean {
-        return emailPattern.matcher(email).matches()
+    override fun onTouch(v: View?, event: MotionEvent): Boolean {
+        return false
     }
 }

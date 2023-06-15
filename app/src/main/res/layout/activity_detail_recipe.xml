@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         >
 
+
         <ImageView
             android:id="@+id/iv_back"
             android:layout_width="56dp"
@@ -20,7 +21,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_back"
+
             app:tint="?attr/colorPrimary"
+
             android:elevation="2dp"
             />
 
@@ -29,7 +32,9 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
+
             app:layout_constraintDimensionRatio="4:3"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -40,12 +45,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
+
             android:layout_marginTop="8dp"
             android:fontFamily="@font/inter_bold"
             app:layout_constraintTop_toBottomOf="@id/iv_result_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="Title"
+
             android:textColor="?attr/colorPrimary"
             />
 
@@ -54,16 +61,19 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
+
             android:layout_height="72dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_name"
             android:scrollbars="none">
 
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
+
 
                 <RelativeLayout
                     android:layout_width="96dp"
@@ -261,7 +271,6 @@
 
             </LinearLayout>
         </HorizontalScrollView>
-
 
         <TextView
             android:id="@+id/header_porsi"

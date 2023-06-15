@@ -3,16 +3,14 @@ package com.example.instagramclone.activities
 import android.Manifest
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -49,40 +47,46 @@ class PostActivity : AppCompatActivity() {
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_CODE_PERMISSIONS) {
-            if (!allPermissionsGranted()) {
-                Toast.makeText(
-                    this,
-                    "Tidak mendapatkan permission.",
-                    Toast.LENGTH_SHORT
-                ).show()
-                finish()
-            }
-        }
-    }
-
-    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
-        ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
-    }
+//    override fun onRequestPermissionsResult(
+//        requestCode: Int,
+//        permissions: Array<String>,
+//        grantResults: IntArray
+//    ) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+//        if (requestCode == REQUEST_CODE_PERMISSIONS) {
+//            if (!allPermissionsGranted()) {
+//                Toast.makeText(
+//                    this,
+//                    "Tidak mendapatkan permission.",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//                finish()
+//            }
+//        }
+//    }
+//
+//    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
+//        ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (!allPermissionsGranted()) {
-            ActivityCompat.requestPermissions(
-                this,
-                REQUIRED_PERMISSIONS,
-                REQUEST_CODE_PERMISSIONS
-            )
-        }
+//        if (!allPermissionsGranted()) {
+//            ActivityCompat.requestPermissions(
+//                this,
+//                REQUIRED_PERMISSIONS,
+//                REQUEST_CODE_PERMISSIONS
+//            )
+//        }
+
+        Log.d("TEST", "${binding.previewImageView.drawable == null}")
+
+//        showScanButton(binding.previewImageView.drawable == null)
+
+
         binding.cameraXButton.setOnClickListener { startCameraX() }
         binding.actionBack.setOnClickListener {
             finish()
@@ -97,6 +101,10 @@ class PostActivity : AppCompatActivity() {
             binding.uploadButton.setOnClickListener { uploadImage(authData.token) }
         }
     }
+
+//    private fun showScanButton(isImageExist: Boolean) {
+//        binding.uploadButton.visibility = if (isImageExist) View.VISIBLE else View.GONE
+//    }
 
     private fun startCameraX() {
         val intent = Intent(this, CameraActivity::class.java)
@@ -122,12 +130,22 @@ class PostActivity : AppCompatActivity() {
                 ) {
                     if (response.isSuccessful) {
                         val responseBody = response.body()
+
                         if (responseBody != null) {
                             Toast.makeText(this@PostActivity, responseBody.data?.name, Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@PostActivity, ResultActivity::class.java)
                             intent.putExtra("data", responseBody.data?.nutrition)
                             startActivity(intent)
-//                            finish()
+
+                            // TODO : USE THIS CODE INSTEAD WHEN DONE TESTING
+//                            if (responseBody.data?.confidence!! < 0.7) {
+//                                Toast.makeText(this@PostActivity, "Please retake your photo", Toast.LENGTH_SHORT).show()
+//                            } else {
+//                                Toast.makeText(this@PostActivity, responseBody.data?.name, Toast.LENGTH_SHORT).show()
+//                                val intent = Intent(this@PostActivity, ResultActivity::class.java)
+//                                intent.putExtra("data", responseBody.data?.nutrition)
+//                                startActivity(intent)
+//                            }
                         }
                     } else {
                         Log.d("INIBANG", "load: ${response.message()}")
@@ -140,7 +158,7 @@ class PostActivity : AppCompatActivity() {
             })
 
         } else {
-            val warnMessage = if (getFile == null && binding.edDescription.text.toString().isNullOrEmpty()) "Please provide an image and the description" else if (binding.edDescription.text.toString().isNullOrEmpty()) "Please provide a description" else "Please provide an image"
+            val warnMessage = "Please provide an image"
             Toast.makeText(this@PostActivity, warnMessage, Toast.LENGTH_SHORT).show()
         }
     }

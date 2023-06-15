@@ -52,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-        binding.actionLogin.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             val email = binding.edLoginEmail.text.toString()
             val password = binding.edLoginPassword.text.toString()
 
@@ -60,6 +60,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.tvToRegister.setOnClickListener {
+            finish()
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }

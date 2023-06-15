@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.instagramclone.UserPreferences
-import com.example.instagramclone.di.Injection
 import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.models.MainViewModel
 

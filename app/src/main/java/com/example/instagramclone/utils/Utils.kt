@@ -110,3 +110,12 @@ fun getElapsedTimeSinceDate(dateString: String): String {
         else -> "$minutes minutes ago"
     }
 }
+
+fun formatDate(date : String) : String {
+    val inputDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+    val outputDateFormat = SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault())
+
+    val inputDate = inputDateFormat.parse(date)
+    val outputDate = outputDateFormat.format(inputDate)
+    return outputDate
+}

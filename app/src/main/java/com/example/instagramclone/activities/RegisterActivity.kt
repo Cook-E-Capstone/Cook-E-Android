@@ -3,11 +3,8 @@ package com.example.instagramclone.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
@@ -19,7 +16,6 @@ import com.example.instagramclone.databinding.ActivityRegisterBinding
 import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.network.ApiConfig
 import com.example.instagramclone.network.responses.CookeRegisterResponse
-import com.example.instagramclone.network.responses.RegisterResponse
 import com.example.instagramclone.utils.ViewModelFactory
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,19 +37,19 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
-            if (edRegisterName.text.isNullOrEmpty()) {
-                edRegisterName.error = "Username must be at least 1 character long"
-            }
+//            if (edRegisterName.text.isNullOrEmpty()) {
+//                edRegisterName.error = "Username must be at least 1 character long"
+//            }
+//
+//            if (edRegisterEmail.text.isNullOrEmpty()) {
+//                edRegisterEmail.error = "Invalid email format"
+//            }
+//
+//            if (edRegisterPassword.text.isNullOrEmpty()) {
+//                edRegisterPassword.error = "Password must be at least 8 characters"
+//            }
 
-            if (edRegisterEmail.text.isNullOrEmpty()) {
-                edRegisterEmail.error = "Invalid email format"
-            }
-
-            if (edRegisterPassword.text.isNullOrEmpty()) {
-                edRegisterPassword.error = "Password must be at least 8 characters"
-            }
-
-            actionRegister.setOnClickListener {
+            btnRegister.setOnClickListener {
                 val name = edRegisterName.text.toString()
                 val email = edRegisterEmail.text.toString()
                 val password = edRegisterPassword.text.toString()
@@ -61,26 +57,28 @@ class RegisterActivity : AppCompatActivity() {
                 register(name, email, password)
             }
 
-            tvToLogin.setOnClickListener {
-                finish()
-            }
+//            edRegisterName.addTextChangedListener(object : TextWatcher {
+//                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+//                }
+//
+//                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+//                }
+//
+//                override fun afterTextChanged(s: Editable?) {
+//                    val username = s.toString().trim()
+//                    if (username.isEmpty()) {
+//                        edRegisterName.error = "Username must be at least 1 character long"
+//                    } else {
+//                        edRegisterEmail.error = null
+//                    }
+//                }
+//            })
+        }
 
-            edRegisterName.addTextChangedListener(object : TextWatcher {
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                }
-
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                }
-
-                override fun afterTextChanged(s: Editable?) {
-                    val username = s.toString().trim()
-                    if (username.isEmpty()) {
-                        edRegisterName.error = "Username must be at least 1 character long"
-                    } else {
-                        edRegisterEmail.error = null
-                    }
-                }
-            })
+        binding.tvToLogin.setOnClickListener {
+            finish()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
 
 
