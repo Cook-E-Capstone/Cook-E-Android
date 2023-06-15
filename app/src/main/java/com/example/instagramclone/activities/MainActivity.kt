@@ -134,32 +134,39 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-////
-        binding.actionScan.setOnClickListener {
-            val postIntent = Intent(this, PostActivity::class.java)
-            startActivity(postIntent)
-        }
-//
 
-        binding.actionRecipe.setOnClickListener {
-            val recipeIntent = Intent(this, RecipeActivity::class.java)
-
-//            mainViewModel.listStory.observe(this) {
-//                Log.d(TAG, it.toString())
-//                mapIntent.putParcelableArrayListExtra("extra_story", ArrayList(it))
-//            }
-            startActivity(recipeIntent)
-
+        if (this is MainActivity) {
+            binding.bottomNavigationView2.actionHome.setColorFilter(
+                ContextCompat.getColor(this, R.color.red)
+            )
+        } else {
+            binding.bottomNavigationView2.actionHome.clearColorFilter()
         }
 
-        binding.actionCommunity.setOnClickListener {
-            val communityIntent = Intent(this, CommunityActivity::class.java)
-            startActivity(communityIntent)
-        }
-
-//        binding.actionLogout.setOnClickListener {
-//            authViewModel.removeAuthSetting()
+//        binding.bottomNavigationView2.actionHome.setOnClickListener {
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
 //        }
+
+        binding.bottomNavigationView2.actionCommunity.setOnClickListener {
+            val intent = Intent(this, CommunityActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bottomNavigationView2.actionScan.setOnClickListener {
+            val intent = Intent(this, PostActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bottomNavigationView2.actionRecipe.setOnClickListener {
+            val intent = Intent(this, RecipeActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bottomNavigationView2.actionNutritionist.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
 
 
         binding.actionProfile.setOnClickListener {
@@ -218,9 +225,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
-
-
-
     }
 
     private fun setPostData(listPost : List<CommunityItem>) {

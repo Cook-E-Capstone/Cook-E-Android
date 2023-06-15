@@ -1,5 +1,6 @@
 package com.example.instagramclone.activities
 
+import BottomNavigationView2
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -7,11 +8,14 @@ import android.util.Log
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.instagramclone.R
 import com.example.instagramclone.UserPreferences
 import com.example.instagramclone.adapters.CommunityPostAdapter
 import com.example.instagramclone.databinding.ActivityCommunityBinding
@@ -60,8 +64,6 @@ class CommunityActivity : AppCompatActivity() {
             }
         }
 
-//        setupViewModel()
-//        getAllStories()
 
 
 //
@@ -86,21 +88,40 @@ class CommunityActivity : AppCompatActivity() {
             val postIntent = Intent(this, CommunityPostActivity::class.java)
             startActivity(postIntent)
         }
-//
-//        binding.actionMap.setOnClickListener {
-//            val mapIntent = Intent(this, MapsActivity::class.java)
-//            mainViewModel.listStory.observe(this) {
-//                Log.d(TAG, it.toString())
-//                mapIntent.putParcelableArrayListExtra("extra_story", ArrayList(it))
-//            }
-//            startActivity(mapIntent)
-//
+
+
+        if (this is CommunityActivity) {
+            binding.bottomNavigationView2.actionCommunity.setColorFilter(
+                ContextCompat.getColor(this, R.color.red)
+            )
+        } else {
+            binding.bottomNavigationView2.actionCommunity.clearColorFilter()
+        }
+
+        binding.bottomNavigationView2.actionHome.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+//        binding.bottomNavigationView2.actionCommunity.setOnClickListener {
+//            val intent = Intent(this, CommunityActivity::class.java)
+//            startActivity(intent)
 //        }
 
-//        binding.actionLogout.setOnClickListener {
-//            authViewModel.removeAuthSetting()
-//        }
+        binding.bottomNavigationView2.actionScan.setOnClickListener {
+            val intent = Intent(this, PostActivity::class.java)
+            startActivity(intent)
+        }
 
+        binding.bottomNavigationView2.actionRecipe.setOnClickListener {
+            val intent = Intent(this, RecipeActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bottomNavigationView2.actionNutritionist.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
 
 
         val onBackPressedCallback = object : OnBackPressedCallback(true) {

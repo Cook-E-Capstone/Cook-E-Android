@@ -38,6 +38,8 @@ class ResultActivity : AppCompatActivity() {
             tvPotasium.text = resultData.potasiumMg.toString()
             tvSerat.text = resultData.seratG.toString()
             tvSodium.text = resultData.sodiumMg.toString()
+            tvGula.text = resultData.gulaG.toString()
+
 
 
 

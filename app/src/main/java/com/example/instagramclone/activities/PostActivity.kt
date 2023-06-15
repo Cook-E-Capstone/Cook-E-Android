@@ -11,10 +11,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import com.example.instagramclone.R
 import com.example.instagramclone.UserPreferences
 import com.example.instagramclone.databinding.ActivityPostBinding
 import com.example.instagramclone.models.AuthViewModel
@@ -88,9 +90,6 @@ class PostActivity : AppCompatActivity() {
 
 
         binding.cameraXButton.setOnClickListener { startCameraX() }
-        binding.actionBack.setOnClickListener {
-            finish()
-        }
 
         val pref = UserPreferences.getInstance(dataStore)
         val authViewModel = ViewModelProvider(this, ViewModelFactory(pref, this,"")).get(
@@ -99,6 +98,39 @@ class PostActivity : AppCompatActivity() {
 
         authViewModel.getAuthSettings().observe(this) { authData ->
             binding.uploadButton.setOnClickListener { uploadImage(authData.token) }
+        }
+
+        if (this is PostActivity) {
+            binding.bottomNavigationView2.actionScan.setColorFilter(
+                ContextCompat.getColor(this, R.color.red)
+            )
+        } else {
+            binding.bottomNavigationView2.actionScan.clearColorFilter()
+        }
+
+        binding.bottomNavigationView2.actionHome.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bottomNavigationView2.actionCommunity.setOnClickListener {
+            val intent = Intent(this, CommunityActivity::class.java)
+            startActivity(intent)
+        }
+
+//        binding.bottomNavigationView2.actionScan.setOnClickListener {
+//            val intent = Intent(this, PostActivity::class.java)
+//            startActivity(intent)
+//        }
+
+        binding.bottomNavigationView2.actionRecipe.setOnClickListener {
+            val intent = Intent(this, RecipeActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bottomNavigationView2.actionNutritionist.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 

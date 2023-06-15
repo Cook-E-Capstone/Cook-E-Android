@@ -25,4 +25,15 @@
     <string name="protein">Protein</string>
     <string name="serat">Serat</string>
     <string name="kolesterol">Kolesterol</string>
+    <string name="sodium">Sodium</string>
+    <string name="potasium">Potasium</string>
+    <string name="gula">Gula</string>
+    <string name="kalsium">Kalsium</string>
+    <string name="zat_besi">Zat Besi</string>
+    <string name="vitamin_a">Vitamin A</string>
+    <string name="vitamin_b">Vitamin B</string>
+    <string name="vitamin_e">Vitamin E</string>
+    <string name="vitamin_k">Vitamin K</string>
+    <string name="vitamin_c">Vitamin C</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo odio aenean sed adipiscing. Proin nibh nisl condimentum id venenatis a condimentum. Magna ac placerat vestibulum lectus mauris. Placerat vestibulum lectus mauris ultrices eros in. Amet dictum sit amet justo donec enim diam vulputate. Amet consectetur adipiscing elit ut aliquam purus sit. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit. Magna etiam.</string>
 </resources>

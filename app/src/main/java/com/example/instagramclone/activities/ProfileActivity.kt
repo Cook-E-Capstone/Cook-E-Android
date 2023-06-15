@@ -1,11 +1,13 @@
 package com.example.instagramclone.activities
 
+import BottomNavigationView2
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -62,6 +64,10 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
 
+        }
+
+        binding.ivBack.setOnClickListener {
+            finish()
         }
 
 

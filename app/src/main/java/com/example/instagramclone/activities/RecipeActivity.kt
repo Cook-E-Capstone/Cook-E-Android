@@ -1,15 +1,18 @@
 package com.example.instagramclone.activities
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.instagramclone.R
 import com.example.instagramclone.UserPreferences
 import com.example.instagramclone.adapters.ListRecipeAdapter
 import com.example.instagramclone.databinding.ActivityRecipeBinding
@@ -66,6 +69,39 @@ class RecipeActivity : AppCompatActivity() {
 
         mainViewModel.isEmpty.observe(this) {
             showEmpty(it)
+        }
+
+        if (this is RecipeActivity) {
+            binding.bottomNavigationView2.actionRecipe.setColorFilter(
+                ContextCompat.getColor(this, R.color.red)
+            )
+        } else {
+            binding.bottomNavigationView2.actionRecipe.clearColorFilter()
+        }
+
+        binding.bottomNavigationView2.actionHome.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bottomNavigationView2.actionCommunity.setOnClickListener {
+            val intent = Intent(this, CommunityActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bottomNavigationView2.actionScan.setOnClickListener {
+            val intent = Intent(this, PostActivity::class.java)
+            startActivity(intent)
+        }
+
+//        binding.bottomNavigationView2.actionRecipe.setOnClickListener {
+//            val intent = Intent(this, RecipeActivity::class.java)
+//            startActivity(intent)
+//        }
+
+        binding.bottomNavigationView2.actionNutritionist.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
 
     }
