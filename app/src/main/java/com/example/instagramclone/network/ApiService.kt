@@ -7,6 +7,7 @@ import com.example.instagramclone.network.responses.CommunityResponse
 import com.example.instagramclone.network.responses.CookeLoginResponse
 import com.example.instagramclone.network.responses.CookeRegisterResponse
 import com.example.instagramclone.network.responses.ImageUploadResponse
+import com.example.instagramclone.network.responses.ProfileResponse
 import com.example.instagramclone.network.responses.RecipeResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -48,6 +49,11 @@ interface ApiService {
 //        @Field("email") email: String,
 //        @Field("password") password: String,
 //    ): Call<RegisterResponse>
+
+    @GET("user/profile")
+    fun getUser(
+        @Header("Authorization") token: String,
+    ) : Call<ProfileResponse>
 
     @Multipart
     @POST("ml/image")

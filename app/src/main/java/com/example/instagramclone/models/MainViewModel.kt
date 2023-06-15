@@ -6,13 +6,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.instagramclone.ListStoryItem
 import com.example.instagramclone.StoryResponse
+import com.example.instagramclone.activities.ProfileActivity
 import com.example.instagramclone.network.ApiConfig
 import com.example.instagramclone.network.responses.CommunityDetail
 import com.example.instagramclone.network.responses.CommunityDetailResponse
 import com.example.instagramclone.network.responses.CommunityItem
 import com.example.instagramclone.network.responses.CommunityResponse
+import com.example.instagramclone.network.responses.ProfileResponse
 import com.example.instagramclone.network.responses.RecipeResponse
 import com.example.instagramclone.network.responses.ResultsItem
+import com.example.instagramclone.network.responses.UserProfile
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,12 +40,39 @@ class MainViewModel() : ViewModel() {
     
     private val _isEmpty = MutableLiveData<Boolean>()
     val isEmpty : LiveData<Boolean> = _isEmpty
+
+    private val _userData = MutableLiveData<UserProfile>()
+    val userData : LiveData<UserProfile> = _userData
     
 
 //    val stories: LiveData<PagingData<ListStoryItem>> = repository.getStories().cachedIn(viewModelScope)
 
     companion object{
         private const val TAG = "MainViewModel"
+    }
+
+    fun getUserInfo(token: String) {
+        _isLoading.value = true
+        val client = ApiConfig.getApiService().getUser(token)
+        client.enqueue(object : Callback<ProfileResponse> {
+            override fun onResponse(
+                call: Call<ProfileResponse>,
+                response: Response<ProfileResponse>
+            ) {
+                _isLoading.value = false
+                if (response.isSuccessful) {
+                    _userData.value = response.body()?.data?.user!!
+                } else {
+                    Log.e(ProfileActivity.TAG, "Unsuccessful response: ${response}")
+
+                }
+            }
+
+            override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
+                Log.e(TAG, "onFailure: ${t.message.toString()}")
+            }
+
+        })
     }
 
     fun searchRecipe(token: String, query: String, limit: Int) {

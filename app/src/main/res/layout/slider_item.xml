@@ -18,8 +18,4 @@
             android:contentDescription="@string/app_name" />
 
     </androidx.cardview.widget.CardView>
-
-    <!--Image we will display is our slider view-->
-
-
 </RelativeLayout>

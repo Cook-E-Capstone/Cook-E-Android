@@ -158,8 +158,8 @@ class MainActivity : AppCompatActivity() {
         // NANTI DIGANTI KE PROFILE ACTIVITY
 
         binding.actionProfile.setOnClickListener {
-            val communityIntent = Intent(this, CommunityActivity::class.java)
-            startActivity(communityIntent)
+            val profileIntent = Intent(this, ProfileActivity::class.java)
+            startActivity(profileIntent)
         }
 
         // SLIDER
