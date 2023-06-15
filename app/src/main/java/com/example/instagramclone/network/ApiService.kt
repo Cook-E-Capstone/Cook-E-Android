@@ -6,10 +6,8 @@ import com.example.instagramclone.network.responses.CommunityPostResponse
 import com.example.instagramclone.network.responses.CommunityResponse
 import com.example.instagramclone.network.responses.CookeLoginResponse
 import com.example.instagramclone.network.responses.CookeRegisterResponse
-import com.example.instagramclone.network.responses.FileUploadResponse
 import com.example.instagramclone.network.responses.ImageUploadResponse
 import com.example.instagramclone.network.responses.RecipeResponse
-import com.example.instagramclone.network.responses.RegisterResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call

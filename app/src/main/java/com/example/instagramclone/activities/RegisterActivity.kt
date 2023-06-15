@@ -3,11 +3,8 @@ package com.example.instagramclone.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
@@ -19,7 +16,6 @@ import com.example.instagramclone.databinding.ActivityRegisterBinding
 import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.network.ApiConfig
 import com.example.instagramclone.network.responses.CookeRegisterResponse
-import com.example.instagramclone.network.responses.RegisterResponse
 import com.example.instagramclone.utils.ViewModelFactory
 import retrofit2.Call
 import retrofit2.Callback

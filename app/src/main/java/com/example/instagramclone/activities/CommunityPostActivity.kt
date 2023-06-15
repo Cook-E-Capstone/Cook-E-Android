@@ -23,12 +23,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.instagramclone.UserPreferences
 import com.example.instagramclone.createCustomTempFile
 import com.example.instagramclone.databinding.ActivityCommunityPostBinding
-import com.example.instagramclone.databinding.ActivityPostBinding
 import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.network.ApiConfig
 import com.example.instagramclone.network.responses.CommunityPostResponse
-import com.example.instagramclone.network.responses.FileUploadResponse
-import com.example.instagramclone.network.responses.ImageUploadResponse
 import com.example.instagramclone.reduceFileImage
 import com.example.instagramclone.rotateFile
 import com.example.instagramclone.uriToFile

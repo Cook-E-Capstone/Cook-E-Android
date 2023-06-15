@@ -1,13 +1,11 @@
 package com.example.instagramclone.activities
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.instagramclone.R
 import com.example.instagramclone.databinding.ActivityDetailRecipeBinding
-import com.example.instagramclone.network.responses.Nutrition
 import com.example.instagramclone.network.responses.ResultsItem
 
 class DetailRecipeActivity : AppCompatActivity() {

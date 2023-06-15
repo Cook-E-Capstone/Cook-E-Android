@@ -19,10 +19,6 @@ import com.example.instagramclone.ListStoryItem
 import com.example.instagramclone.R
 import com.example.instagramclone.activities.DetailActivity
 import com.example.instagramclone.getElapsedTimeSinceDate
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Locale
-import java.util.TimeZone
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 

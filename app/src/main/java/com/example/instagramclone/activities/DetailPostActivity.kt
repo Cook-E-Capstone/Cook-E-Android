@@ -1,26 +1,22 @@
 package com.example.instagramclone.activities
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.example.instagramclone.R
 import com.example.instagramclone.UserPreferences
-import com.example.instagramclone.databinding.ActivityDetailBinding
 import com.example.instagramclone.databinding.ActivityDetailPostBinding
 import com.example.instagramclone.formatDate
 import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.models.MainViewModel
 import com.example.instagramclone.network.responses.CommunityDetail
 import com.example.instagramclone.utils.ViewModelFactory
-import java.text.SimpleDateFormat
-import java.util.Locale
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 

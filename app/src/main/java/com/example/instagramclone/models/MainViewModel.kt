@@ -1,18 +1,12 @@
 package com.example.instagramclone.models
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import androidx.paging.PagingData
-import androidx.paging.cachedIn
 import com.example.instagramclone.ListStoryItem
 import com.example.instagramclone.StoryResponse
-import com.example.instagramclone.database.StoryRepository
 import com.example.instagramclone.network.ApiConfig
-import com.example.instagramclone.network.responses.CommunityData
 import com.example.instagramclone.network.responses.CommunityDetail
 import com.example.instagramclone.network.responses.CommunityDetailResponse
 import com.example.instagramclone.network.responses.CommunityItem

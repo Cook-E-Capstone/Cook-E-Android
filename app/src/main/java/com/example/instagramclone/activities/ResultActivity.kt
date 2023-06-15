@@ -1,11 +1,9 @@
 package com.example.instagramclone.activities
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.instagramclone.ListStoryItem
-import com.example.instagramclone.R
 import com.example.instagramclone.databinding.ActivityResultBinding
 import com.example.instagramclone.network.responses.Nutrition
 

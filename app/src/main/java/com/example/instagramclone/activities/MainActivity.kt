@@ -9,7 +9,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -18,18 +17,13 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.instagramclone.ListStoryItem
 import com.example.instagramclone.UserPreferences
 import com.example.instagramclone.adapters.CommunityPostAdapter
-import com.example.instagramclone.adapters.ListStoryAdapter
-import com.example.instagramclone.adapters.LoadingStateAdapter
-import com.example.instagramclone.adapters.StoryAdapter
 import com.example.instagramclone.databinding.ActivityMainBinding
 import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.models.MainViewModel
 import com.example.instagramclone.network.responses.CommunityItem
 import com.example.instagramclone.utils.ViewModelFactory
-import java.util.regex.Pattern
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 

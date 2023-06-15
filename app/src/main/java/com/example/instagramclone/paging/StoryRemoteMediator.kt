@@ -2,20 +2,16 @@ package com.example.instagramclone.paging
 
 import android.content.Context
 import android.util.Log
-import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
 import com.example.instagramclone.ListStoryItem
-import com.example.instagramclone.database.StoryDatabase
-import com.example.instagramclone.database.StoryItem
-import com.example.instagramclone.network.ApiService
 import com.example.instagramclone.adapters.dataStore
 import com.example.instagramclone.database.RemoteKeys
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
+import com.example.instagramclone.database.StoryDatabase
+import com.example.instagramclone.network.ApiService
 
 
 @OptIn(ExperimentalPagingApi::class)

@@ -1,7 +1,6 @@
 package com.example.instagramclone.adapters
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.instagramclone.R
-import com.example.instagramclone.activities.DetailPostActivity
 import com.example.instagramclone.activities.DetailRecipeActivity
-import com.example.instagramclone.network.responses.CommunityItem
 import com.example.instagramclone.network.responses.ResultsItem
 
 class ListRecipeAdapter(private val listRecipe : List<ResultsItem>) : RecyclerView.Adapter<ListRecipeAdapter.ViewHolder>() {

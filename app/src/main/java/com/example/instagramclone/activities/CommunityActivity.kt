@@ -2,21 +2,19 @@ package com.example.instagramclone.activities
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.instagramclone.R
 import com.example.instagramclone.UserPreferences
 import com.example.instagramclone.adapters.CommunityPostAdapter
 import com.example.instagramclone.databinding.ActivityCommunityBinding
-import com.example.instagramclone.databinding.ActivityMainBinding
 import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.models.MainViewModel
 import com.example.instagramclone.network.responses.CommunityItem
