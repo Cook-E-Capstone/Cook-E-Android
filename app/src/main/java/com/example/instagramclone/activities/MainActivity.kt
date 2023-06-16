@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
             mainViewModel.listPost.observe(this) {
                 Log.d(TAG, "onCreate: ${it}")
 
-                setPostData(it)
+                setPostData(it.take(5))
             }
         }
 
