@@ -153,20 +153,19 @@ class PostActivity : AppCompatActivity() {
                         val responseBody = response.body()
 
                         if (responseBody != null) {
-                            Toast.makeText(this@PostActivity, responseBody.data?.name, Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this@PostActivity, ResultActivity::class.java)
-                            intent.putExtra("data", responseBody.data?.nutrition)
-                            startActivity(intent)
+//                            Toast.makeText(this@PostActivity, responseBody.data?.name, Toast.LENGTH_SHORT).show()
+//                            val intent = Intent(this@PostActivity, ResultActivity::class.java)
+//                            intent.putExtra("data", responseBody.data?.nutrition)
+//                            startActivity(intent)
 
-                            // TODO : USE THIS CODE INSTEAD WHEN DONE TESTING
-//                            if (responseBody.data?.confidence!! < 0.7) {
-//                                Toast.makeText(this@PostActivity, "Please retake your photo", Toast.LENGTH_SHORT).show()
-//                            } else {
-//                                Toast.makeText(this@PostActivity, responseBody.data?.name, Toast.LENGTH_SHORT).show()
-//                                val intent = Intent(this@PostActivity, ResultActivity::class.java)
-//                                intent.putExtra("data", responseBody.data?.nutrition)
-//                                startActivity(intent)
-//                            }
+                            if (responseBody.data?.confidence!! < 0.6) {
+                                Toast.makeText(this@PostActivity, "Please retake your photo", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this@PostActivity, responseBody.data?.name, Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this@PostActivity, ResultActivity::class.java)
+                                intent.putExtra("data", responseBody.data?.nutrition)
+                                startActivity(intent)
+                            }
                         }
                     } else {
                         Log.d("INIBANG", "load: ${response.message()}")
