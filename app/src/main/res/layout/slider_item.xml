@@ -11,9 +11,9 @@
         app:cardCornerRadius="20dp">
         <ImageView
             android:id="@+id/myimage"
-            android:layout_width="300dp"
-            android:layout_height="120dp"
-            android:scaleType="fitXY"
+            android:layout_width="370dp"
+            android:layout_height="145dp"
+            android:scaleType="centerInside"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/app_name" />
 
