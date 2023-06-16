@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
@@ -103,6 +104,14 @@ class RecipeActivity : AppCompatActivity() {
             val intent = Intent(this, NutritionistActivity::class.java)
             startActivity(intent)
         }
+
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finishAffinity()
+            }
+        }
+
+        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 
     }
 

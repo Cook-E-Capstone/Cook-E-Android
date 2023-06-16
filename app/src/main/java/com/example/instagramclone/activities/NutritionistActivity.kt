@@ -3,6 +3,7 @@ package com.example.instagramclone.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import com.example.instagramclone.R
 import com.example.instagramclone.databinding.ActivityMainBinding
@@ -49,5 +50,12 @@ class NutritionistActivity : AppCompatActivity() {
 //            val intent = Intent(this, NutritionistActivity::class.java)
 //            startActivity(intent)
 //        }
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finishAffinity()
+            }
+        }
+
+        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
     }
 }
