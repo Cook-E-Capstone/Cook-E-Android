@@ -30,7 +30,6 @@ class CommunityActivity : AppCompatActivity() {
     private var token : String = ""
 
     companion object {
-        const val EXTRA_USER = "extra_user"
         const val TAG = "MODAN"
     }
 
@@ -42,13 +41,10 @@ class CommunityActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         binding.rvStory.layoutManager = layoutManager
 
-        val mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-            MainViewModel::class.java)
+        val mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
 
         val pref = UserPreferences.getInstance(dataStore)
-        val authViewModel = ViewModelProvider(this, ViewModelFactory(pref,this,"")).get(
-            AuthViewModel::class.java
-        )
+        val authViewModel = ViewModelProvider(this, ViewModelFactory(pref,this,""))[AuthViewModel::class.java]
 
         authViewModel.getAuthSettings().observe(this) {
             token = it.token
@@ -62,7 +58,7 @@ class CommunityActivity : AppCompatActivity() {
         authViewModel.getAuthSettings().observe(this) { authData ->
             mainViewModel.getAllPost(authData.token)
             mainViewModel.listPost.observe(this) {
-                Log.d(TAG, "onCreate: ${it}")
+                Log.d(TAG, "onCreate: $it")
 
                 setPostData(it)
             }

@@ -28,7 +28,6 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 class RecipeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecipeBinding
-    private var token : String = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

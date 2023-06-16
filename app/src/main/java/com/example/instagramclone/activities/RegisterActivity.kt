@@ -68,11 +68,10 @@ class RegisterActivity : AppCompatActivity() {
                     if (response.isSuccessful && responseBody != null) {
                         Log.e(TAG, responseBody.toString())
                         val pref = UserPreferences.getInstance(dataStore)
-                        val authViewModel = ViewModelProvider(this@RegisterActivity, ViewModelFactory(pref, this@RegisterActivity,"")).get(
-                            AuthViewModel::class.java
-                        )
+                        val authViewModel =
+                            ViewModelProvider(this@RegisterActivity, ViewModelFactory(pref, this@RegisterActivity,""))[AuthViewModel::class.java]
 
-                        authViewModel.saveAuthSetting(responseBody.data?.user?.name!!, responseBody.data?.user?.id!!, responseBody.data?.token!!)
+                        authViewModel.saveAuthSetting(responseBody.data?.user?.name!!, responseBody.data.user.id!!, responseBody.data.token!!)
                         showLoading(false)
                         Toast.makeText(this@RegisterActivity, "User created", Toast.LENGTH_SHORT).show()
 

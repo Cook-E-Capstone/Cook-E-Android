@@ -17,10 +17,10 @@ class ResultActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val resultData = if (Build.VERSION.SDK_INT >= 33) {
-            intent.getParcelableExtra(ResultActivity.EXTRA_DATA, Nutrition::class.java)
+            intent.getParcelableExtra(EXTRA_DATA, Nutrition::class.java)
         } else {
             @Suppress("DEPRECATION")
-            intent.getParcelableExtra(ResultActivity.EXTRA_DATA)
+            intent.getParcelableExtra(EXTRA_DATA)
         }
 
         binding.apply {

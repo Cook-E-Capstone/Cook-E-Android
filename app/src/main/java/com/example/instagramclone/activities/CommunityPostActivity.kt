@@ -95,9 +95,7 @@ class CommunityPostActivity : AppCompatActivity() {
         }
 
         val pref = UserPreferences.getInstance(dataStore)
-        val authViewModel = ViewModelProvider(this, ViewModelFactory(pref,this,"")).get(
-            AuthViewModel::class.java
-        )
+        val authViewModel = ViewModelProvider(this, ViewModelFactory(pref,this,""))[AuthViewModel::class.java]
 
         authViewModel.getAuthSettings().observe(this) { authData ->
             binding.uploadButton.setOnClickListener {
@@ -156,7 +154,7 @@ class CommunityPostActivity : AppCompatActivity() {
             })
 
         } else {
-            val warnMessage = if (getFile == null && binding.edDescription.text.toString().isNullOrEmpty()) "Please provide an image and the description" else if (binding.edDescription.text.toString().isNullOrEmpty()) "Please provide a description" else "Please provide an image"
+            val warnMessage = if (getFile == null && binding.edDescription.text.toString().isEmpty()) "Please provide an image and the description" else if (binding.edDescription.text.toString().isEmpty()) "Please provide a description" else "Please provide an image"
             Toast.makeText(this@CommunityPostActivity, warnMessage, Toast.LENGTH_SHORT).show()
         }
     }
