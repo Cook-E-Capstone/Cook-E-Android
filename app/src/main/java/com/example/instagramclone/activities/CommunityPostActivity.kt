@@ -93,7 +93,7 @@ class CommunityPostActivity : AppCompatActivity() {
         binding.cameraXButton.setOnClickListener { startCameraX() }
         binding.cameraButton.setOnClickListener { startTakePhoto() }
         binding.galleryButton.setOnClickListener { startGallery() }
-        binding.actionBack.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             finish()
         }
 

@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,7 @@ import com.example.instagramclone.network.ApiConfig
 import com.example.instagramclone.network.responses.ImageUploadResponse
 import com.example.instagramclone.reduceFileImage
 import com.example.instagramclone.rotateFile
+import com.example.instagramclone.uriToFile
 import com.example.instagramclone.utils.ViewModelFactory
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
@@ -132,6 +134,8 @@ class PostActivity : AppCompatActivity() {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
+
+        binding.ivUploadFromGallery.setOnClickListener { startGallery() }
     }
 
 //    private fun showScanButton(isImageExist: Boolean) {
@@ -215,4 +219,27 @@ class PostActivity : AppCompatActivity() {
             }
         }
     }
+
+    private val launcherIntentGallery = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val selectedImg = result.data?.data as Uri
+            selectedImg.let { uri ->
+                val myFile = uriToFile(uri, this@PostActivity)
+                getFile = myFile
+                binding.previewImageView.setImageURI(uri)
+            }
+        }
+    }
+
+    private fun startGallery() {
+        val intent = Intent()
+        intent.action = Intent.ACTION_GET_CONTENT
+        intent.type = "image/*"
+        val chooser = Intent.createChooser(intent, "Choose a Picture")
+        launcherIntentGallery.launch(chooser)
+    }
+
+
 }

@@ -82,6 +82,20 @@
         app:tint="?attr/colorPrimary"
         />
 
+    <ImageView
+        android:id="@+id/iv_uploadFromGallery"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/cameraXButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cameraXButton"
+        app:layout_constraintEnd_toStartOf="@id/cameraXButton"
+        app:srcCompat="@drawable/ic_gallery"
+        android:background="@drawable/round_button_transparent"
+        app:tint="@color/white"
+        />
+
     <include
         android:id="@+id/bottomNavigationView2"
         layout="@layout/view_bottom_navigation2"

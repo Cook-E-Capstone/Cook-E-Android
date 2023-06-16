@@ -9,7 +9,7 @@
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
     <string name="upload">Upload</string>
-    <string name="description_hint">Description</string>
+    <string name="description_hint">Write a caption</string>
     <string name="logout_button_text">Logout</string>
     <string name="tagline">Sign up to see stories from your friends.</string>
     <string name="post_headline">Post your story</string>
