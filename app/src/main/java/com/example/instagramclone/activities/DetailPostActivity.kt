@@ -38,7 +38,7 @@ class DetailPostActivity : AppCompatActivity() {
         val postId = intent.getStringExtra(EXTRA_ID)
         Log.d(TAG, "onCreate: ${postId}")
 
-        binding.actionBack.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             finishAfterTransition()
 
         }
@@ -73,7 +73,7 @@ class DetailPostActivity : AppCompatActivity() {
             .load(data.pathfile)
             .centerCrop()
             .into(binding.ivDetail)
-        binding.tvTitle.text = data.title
+        binding.tvDetailTitle.text = data.title
         binding.tvCaption.text = caption
         binding.tvContent.text = data.content
     }
