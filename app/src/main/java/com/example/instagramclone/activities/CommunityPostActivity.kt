@@ -9,19 +9,16 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.FileProvider
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.example.instagramclone.UserPreferences
-import com.example.instagramclone.createCustomTempFile
 import com.example.instagramclone.databinding.ActivityCommunityPostBinding
 import com.example.instagramclone.models.AuthViewModel
 import com.example.instagramclone.network.ApiConfig
@@ -110,28 +107,11 @@ class CommunityPostActivity : AppCompatActivity() {
                 uploadImage(authData.token)
             }
         }
-
     }
 
     private fun startCameraX() {
         val intent = Intent(this, CameraActivity::class.java)
         launcherIntentCameraX.launch(intent)
-    }
-
-    private fun startTakePhoto() {
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        intent.resolveActivity(packageManager)
-
-        createCustomTempFile(application).also {
-            val photoURI: Uri = FileProvider.getUriForFile(
-                this@CommunityPostActivity,
-                "com.example.instagramclone",
-                it
-            )
-            currentPhotoPath = it.absolutePath
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-            launcherIntentCamera.launch(intent)
-        }
     }
 
     private fun startGallery() {
@@ -145,8 +125,6 @@ class CommunityPostActivity : AppCompatActivity() {
     private fun uploadImage(token : String) {
         if (getFile != null && binding.edDescription.text.toString().isNotEmpty() && binding.edTitle.text.toString().isNotEmpty()) {
             val file = reduceFileImage(getFile as File)
-
-
             val title = binding.edTitle.text.toString().toRequestBody("text/plain".toMediaType())
             val description = binding.edDescription.text.toString().toRequestBody("text/plain".toMediaType())
             val requestImageFile = file.asRequestBody("image/jpeg".toMediaType())
@@ -167,7 +145,6 @@ class CommunityPostActivity : AppCompatActivity() {
                         if (responseBody != null) {
                             Toast.makeText(this@CommunityPostActivity, responseBody.message, Toast.LENGTH_SHORT).show()
                             finish()
-
                         }
                     } else {
                         Toast.makeText(this@CommunityPostActivity, response.message(), Toast.LENGTH_SHORT).show()
@@ -199,22 +176,6 @@ class CommunityPostActivity : AppCompatActivity() {
 
             myFile?.let { file ->
                 rotateFile(file, isBackCamera)
-                getFile = file
-                binding.previewImageView.setImageBitmap(BitmapFactory.decodeFile(file.path))
-            }
-        }
-    }
-
-    private lateinit var currentPhotoPath: String
-    private val launcherIntentCamera = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) {
-        if (it.resultCode == RESULT_OK) {
-            val myFile = File(currentPhotoPath)
-
-            myFile.let { file ->
-//              Silakan gunakan kode ini jika mengalami perubahan rotasi
-//              rotateFile(file)
                 getFile = file
                 binding.previewImageView.setImageBitmap(BitmapFactory.decodeFile(file.path))
             }

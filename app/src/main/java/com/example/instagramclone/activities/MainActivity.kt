@@ -37,21 +37,20 @@ class MainActivity : AppCompatActivity() {
 
     // on below line we are creating a variable
     // for our array list for storing our images.
-    lateinit var imageUrl: ArrayList<String>
+    private lateinit var imageUrl: ArrayList<String>
 
     // on below line we are creating
     // a variable for our slider view.
-    lateinit var sliderView: SliderView
+    private lateinit var sliderView: SliderView
 
     // on below line we are creating
     // a variable for our slider adapter.
-    lateinit var sliderAdapter: SliderAdapter
+    private lateinit var sliderAdapter: SliderAdapter
 
 //    private val mainViewModel by viewModels<MainViewModel>()
 
 
     companion object {
-        const val EXTRA_USER = "extra_user"
         const val TAG = "MODAN"
 
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == MainActivity.REQUEST_CODE_PERMISSIONS) {
+        if (requestCode == REQUEST_CODE_PERMISSIONS) {
             if (!allPermissionsGranted()) {
                 Toast.makeText(
                     this,
@@ -76,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun allPermissionsGranted() = MainActivity.REQUIRED_PERMISSIONS.all {
+    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
 
@@ -88,21 +87,18 @@ class MainActivity : AppCompatActivity() {
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
                 this,
-                MainActivity.REQUIRED_PERMISSIONS,
-                MainActivity.REQUEST_CODE_PERMISSIONS
+                REQUIRED_PERMISSIONS,
+                REQUEST_CODE_PERMISSIONS
             )
         }
 
         val layoutManager = LinearLayoutManager(this)
         binding.rvStory.layoutManager = layoutManager
 
-        val mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-            MainViewModel::class.java)
+        val mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
 
         val pref = UserPreferences.getInstance(dataStore)
-        val authViewModel = ViewModelProvider(this, ViewModelFactory(pref,this,"")).get(
-            AuthViewModel::class.java
-        )
+        val authViewModel = ViewModelProvider(this, ViewModelFactory(pref,this,""))[AuthViewModel::class.java]
 
         authViewModel.getAuthSettings().observe(this) {
             token = it.token
@@ -121,7 +117,7 @@ class MainActivity : AppCompatActivity() {
         authViewModel.getAuthSettings().observe(this) { authData ->
             mainViewModel.getAllPost(authData.token)
             mainViewModel.listPost.observe(this) {
-                Log.d(TAG, "onCreate: ${it}")
+                Log.d(TAG, "onCreate: $it")
 
                 setPostData(it.take(5))
             }
@@ -135,18 +131,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        if (this is MainActivity) {
-            binding.bottomNavigationView2.actionHome.setColorFilter(
-                ContextCompat.getColor(this, R.color.red)
-            )
-        } else {
-            binding.bottomNavigationView2.actionHome.clearColorFilter()
-        }
-
-//        binding.bottomNavigationView2.actionHome.setOnClickListener {
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//        }
+        binding.bottomNavigationView2.actionHome.setColorFilter(
+            ContextCompat.getColor(this, R.color.red)
+        )
 
         binding.bottomNavigationView2.actionCommunity.setOnClickListener {
             val intent = Intent(this, CommunityActivity::class.java)

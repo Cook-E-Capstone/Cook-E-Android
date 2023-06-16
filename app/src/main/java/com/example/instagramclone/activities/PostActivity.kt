@@ -1,6 +1,5 @@
 package com.example.instagramclone.activities
 
-import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -8,7 +7,6 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
@@ -48,8 +46,6 @@ class PostActivity : AppCompatActivity() {
     companion object {
         const val CAMERA_X_RESULT = 200
 
-        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
-        private const val REQUEST_CODE_PERMISSIONS = 10
     }
 
 //    override fun onRequestPermissionsResult(
@@ -95,9 +91,7 @@ class PostActivity : AppCompatActivity() {
         binding.cameraXButton.setOnClickListener { startCameraX() }
 
         val pref = UserPreferences.getInstance(dataStore)
-        val authViewModel = ViewModelProvider(this, ViewModelFactory(pref, this,"")).get(
-            AuthViewModel::class.java
-        )
+        val authViewModel = ViewModelProvider(this, ViewModelFactory(pref, this,""))[AuthViewModel::class.java]
 
 //        authViewModel.getAuthSettings().observe(this) { authData ->
 //            binding.uploadButton.setOnClickListener { uploadImage(authData.token) }
@@ -112,13 +106,9 @@ class PostActivity : AppCompatActivity() {
             }
         }
 
-        if (this is PostActivity) {
-            binding.bottomNavigationView2.actionScan.setColorFilter(
-                ContextCompat.getColor(this, R.color.red)
-            )
-        } else {
-            binding.bottomNavigationView2.actionScan.clearColorFilter()
-        }
+        binding.bottomNavigationView2.actionScan.setColorFilter(
+            ContextCompat.getColor(this, R.color.red)
+        )
 
         binding.bottomNavigationView2.actionHome.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -129,11 +119,6 @@ class PostActivity : AppCompatActivity() {
             val intent = Intent(this, CommunityActivity::class.java)
             startActivity(intent)
         }
-
-//        binding.bottomNavigationView2.actionScan.setOnClickListener {
-//            val intent = Intent(this, PostActivity::class.java)
-//            startActivity(intent)
-//        }
 
         binding.bottomNavigationView2.actionRecipe.setOnClickListener {
             val intent = Intent(this, RecipeActivity::class.java)

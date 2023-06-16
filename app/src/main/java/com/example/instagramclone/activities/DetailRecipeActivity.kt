@@ -18,10 +18,10 @@ class DetailRecipeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val recipeData = if (Build.VERSION.SDK_INT >= 33) {
-            intent.getParcelableExtra(DetailRecipeActivity.EXTRA_RECIPE, ResultsItem::class.java)
+            intent.getParcelableExtra(EXTRA_RECIPE, ResultsItem::class.java)
         } else {
             @Suppress("DEPRECATION")
-            intent.getParcelableExtra(DetailRecipeActivity.EXTRA_RECIPE)
+            intent.getParcelableExtra(EXTRA_RECIPE)
         }
 
         Log.d(TAG, "onCreate: $recipeData")
@@ -45,22 +45,19 @@ class DetailRecipeActivity : AppCompatActivity() {
 
             tvPorsi.text = recipeData?.hasil
 
-            var bahan: String = ""
+            var bahan = ""
             for (i in recipeData?.bahan!!) {
-                bahan = bahan + "${i}\n"
+                bahan += "${i}\n"
             }
             tvBahan.text = bahan
 
-            var langkah: String = ""
-            for (i in recipeData?.langkah!!) {
-                langkah = langkah + "${i}\n"
+            var langkah = ""
+            for (i in recipeData.langkah!!) {
+                langkah += "${i}\n"
             }
             Log.d(TAG, "Langkah : \n$langkah")
             tvLangkah.text = langkah
-
-
         }
-
     }
 
     companion object {

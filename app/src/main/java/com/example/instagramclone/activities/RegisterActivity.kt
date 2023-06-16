@@ -37,18 +37,6 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
-//            if (edRegisterName.text.isNullOrEmpty()) {
-//                edRegisterName.error = "Username must be at least 1 character long"
-//            }
-//
-//            if (edRegisterEmail.text.isNullOrEmpty()) {
-//                edRegisterEmail.error = "Invalid email format"
-//            }
-//
-//            if (edRegisterPassword.text.isNullOrEmpty()) {
-//                edRegisterPassword.error = "Password must be at least 8 characters"
-//            }
-
             btnRegister.setOnClickListener {
                 val name = edRegisterName.text.toString()
                 val email = edRegisterEmail.text.toString()
@@ -56,33 +44,12 @@ class RegisterActivity : AppCompatActivity() {
 
                 register(name, email, password)
             }
-
-//            edRegisterName.addTextChangedListener(object : TextWatcher {
-//                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-//                }
-//
-//                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-//                }
-//
-//                override fun afterTextChanged(s: Editable?) {
-//                    val username = s.toString().trim()
-//                    if (username.isEmpty()) {
-//                        edRegisterName.error = "Username must be at least 1 character long"
-//                    } else {
-//                        edRegisterEmail.error = null
-//                    }
-//                }
-//            })
         }
-
         binding.tvToLogin.setOnClickListener {
             finish()
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-
-
-
     }
 
     private fun register(name: String, email: String, password: String) {
@@ -100,10 +67,6 @@ class RegisterActivity : AppCompatActivity() {
                     val responseBody = response.body()
                     if (response.isSuccessful && responseBody != null) {
                         Log.e(TAG, responseBody.toString())
-//                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-//                        startActivity(intent)
-//                        finish()
-
                         val pref = UserPreferences.getInstance(dataStore)
                         val authViewModel = ViewModelProvider(this@RegisterActivity, ViewModelFactory(pref, this@RegisterActivity,"")).get(
                             AuthViewModel::class.java
@@ -132,10 +95,8 @@ class RegisterActivity : AppCompatActivity() {
                         .show()
                     Log.e(TAG, t.message.toString())
                 }
-
             })
         }
-
     }
 
     private fun showLoading(isLoading: Boolean) {
@@ -145,5 +106,4 @@ class RegisterActivity : AppCompatActivity() {
             binding.progressBar.visibility = View.GONE
         }
     }
-
 }

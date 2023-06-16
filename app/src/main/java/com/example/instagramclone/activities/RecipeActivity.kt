@@ -50,8 +50,6 @@ class RecipeActivity : AppCompatActivity() {
         authViewModel.getAuthSettings().observe(this) { authData ->
             mainViewModel.searchRecipe(authData.token,"ayam", limit = 20)
             mainViewModel.recipeData.observe(this) {
-//                Log.d("RECIPE", "onCreate: ${it}")
-
                 setRecipeData(it)
             }
 
@@ -72,13 +70,9 @@ class RecipeActivity : AppCompatActivity() {
             showEmpty(it)
         }
 
-        if (this is RecipeActivity) {
-            binding.bottomNavigationView2.actionRecipe.setColorFilter(
-                ContextCompat.getColor(this, R.color.red)
-            )
-        } else {
-            binding.bottomNavigationView2.actionRecipe.clearColorFilter()
-        }
+        binding.bottomNavigationView2.actionRecipe.setColorFilter(
+            ContextCompat.getColor(this, R.color.red)
+        )
 
         binding.bottomNavigationView2.actionHome.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -94,11 +88,6 @@ class RecipeActivity : AppCompatActivity() {
             val intent = Intent(this, PostActivity::class.java)
             startActivity(intent)
         }
-
-//        binding.bottomNavigationView2.actionRecipe.setOnClickListener {
-//            val intent = Intent(this, RecipeActivity::class.java)
-//            startActivity(intent)
-//        }
 
         binding.bottomNavigationView2.actionNutritionist.setOnClickListener {
             val intent = Intent(this, NutritionistActivity::class.java)

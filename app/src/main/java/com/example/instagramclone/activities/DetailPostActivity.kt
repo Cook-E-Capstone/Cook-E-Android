@@ -36,7 +36,7 @@ class DetailPostActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val postId = intent.getStringExtra(EXTRA_ID)
-        Log.d(TAG, "onCreate: ${postId}")
+        Log.d(TAG, "onCreate: $postId")
 
         binding.ivBack.setOnClickListener {
             finishAfterTransition()
@@ -44,18 +44,15 @@ class DetailPostActivity : AppCompatActivity() {
         }
 
 
-        val mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-            MainViewModel::class.java)
+        val mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
 
         val pref = UserPreferences.getInstance(dataStore)
-        val authViewModel = ViewModelProvider(this, ViewModelFactory(pref,this,"")).get(
-            AuthViewModel::class.java
-        )
+        val authViewModel = ViewModelProvider(this, ViewModelFactory(pref,this,""))[AuthViewModel::class.java]
 
-        authViewModel.getAuthSettings().observe(this) {
-                mainViewModel.getDetailPost(it.token, postId!!)
+        authViewModel.getAuthSettings().observe(this) { it ->
+            mainViewModel.getDetailPost(it.token, postId!!)
                 mainViewModel.detailPostData.observe(this) {
-                    Log.d(TAG, "onCreate: ${it}")
+                    Log.d(TAG, "onCreate: $it")
                     setData(it)
                 }
 

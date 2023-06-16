@@ -28,7 +28,6 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-
     companion object {
         private const val TAG = "LoginActivity"
     }
@@ -39,9 +38,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val pref = UserPreferences.getInstance(dataStore)
-        val authViewModel = ViewModelProvider(this@LoginActivity, ViewModelFactory(pref, this@LoginActivity,"")).get(
-            AuthViewModel::class.java
-        )
+        val authViewModel =
+            ViewModelProvider(this@LoginActivity, ViewModelFactory(pref, this@LoginActivity,""))[AuthViewModel::class.java]
 
         authViewModel.getAuthSettings().observe(this) {
             if (it.token.isNotEmpty()) {
@@ -84,11 +82,9 @@ class LoginActivity : AppCompatActivity() {
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null) {
                     val pref = UserPreferences.getInstance(dataStore)
-                    val authViewModel = ViewModelProvider(this@LoginActivity, ViewModelFactory(pref, this@LoginActivity,"")).get(
-                        AuthViewModel::class.java
-                    )
+                    val authViewModel = ViewModelProvider(this@LoginActivity, ViewModelFactory(pref, this@LoginActivity,""))[AuthViewModel::class.java]
 
-                    authViewModel.saveAuthSetting(responseBody.data?.user?.name!!, responseBody.data?.user?.id!!, responseBody.data?.token!!)
+                    authViewModel.saveAuthSetting(responseBody.data?.user?.name!!, responseBody.data.user.id!!, responseBody.data.token!!)
                     showLoading(false)
                     Toast.makeText(this@LoginActivity, "Login succeeded", Toast.LENGTH_SHORT).show()
 
@@ -97,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 } else {
-                    Log.e(TAG, "onFailure: ${response}")
+                    Log.e(TAG, "onFailure: $response")
                     showLoading(false)
                     binding.edLoginPassword.error = "Invalid username or password"
                 }

@@ -20,7 +20,6 @@ class CommunityCameraActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCommunityCameraBinding
     private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
     private var imageCapture: ImageCapture? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
