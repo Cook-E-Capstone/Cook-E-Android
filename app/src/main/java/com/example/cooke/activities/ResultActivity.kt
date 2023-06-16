@@ -39,11 +39,11 @@ class ResultActivity : AppCompatActivity() {
             tvProtein.text = resultData.proteinG.toString()
             tvKalsium.text = resultData.kalsiumMg.toString()
             tvBesi.text = resultData.zatBesiMg.toString()
-            tvVitaminA.text = resultData.vitaminA.toString()
-            tvVitaminE.text = resultData.vitaminE.toString()
-            tvVitaminK.text = resultData.vitaminK.toString()
-            tvVitaminC.text = resultData.vitaminC.toString()
-            tvVitaminB.text = resultData.vitaminBKompleks.toString()
+//            tvVitaminA.text = resultData.vitaminA.toString()
+//            tvVitaminE.text = resultData.vitaminE.toString()
+//            tvVitaminK.text = resultData.vitaminK.toString()
+//            tvVitaminC.text = resultData.vitaminC.toString()
+//            tvVitaminB.text = resultData.vitaminBKompleks.toString()
         }
 
         binding.ivBack.setOnClickListener {

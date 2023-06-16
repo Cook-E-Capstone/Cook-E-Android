@@ -406,166 +406,166 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="132dp"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="4dp"
-                android:background="@drawable/bg_bottom_navigation">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="132dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginHorizontal="4dp"-->
+<!--                android:background="@drawable/bg_bottom_navigation">-->
 
-                <TextView
-                    android:id="@+id/tv_vitaminA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Value"
-                    android:layout_above="@id/tv_vitaminATitle"
-                    android:textColor="@android:color/white"
-                    android:fontFamily="@font/inter_bold"
-                    android:textSize="32sp"
-                    android:gravity="center"
-                    />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_vitaminA"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Value"-->
+<!--                    android:layout_above="@id/tv_vitaminATitle"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:fontFamily="@font/inter_bold"-->
+<!--                    android:textSize="32sp"-->
+<!--                    android:gravity="center"-->
+<!--                    />-->
 
-                <TextView
-                    android:id="@+id/tv_vitaminATitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/inter_light"
-                    android:gravity="center"
-                    android:text="@string/vitamin_a"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@android:color/white"
-                    android:textSize="11sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_vitaminATitle"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:fontFamily="@font/inter_light"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/vitamin_a"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="11sp" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
-            <RelativeLayout
-                android:layout_width="132dp"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="4dp"
-                android:background="@drawable/bg_bottom_navigation">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="132dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginHorizontal="4dp"-->
+<!--                android:background="@drawable/bg_bottom_navigation">-->
 
-                <TextView
-                    android:id="@+id/tv_vitaminE"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Value"
-                    android:layout_above="@id/tv_vitaminETitle"
-                    android:textColor="@android:color/white"
-                    android:fontFamily="@font/inter_bold"
-                    android:textSize="32sp"
-                    android:gravity="center"
-                    />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_vitaminE"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Value"-->
+<!--                    android:layout_above="@id/tv_vitaminETitle"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:fontFamily="@font/inter_bold"-->
+<!--                    android:textSize="32sp"-->
+<!--                    android:gravity="center"-->
+<!--                    />-->
 
-                <TextView
-                    android:id="@+id/tv_vitaminETitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/inter_light"
-                    android:gravity="center"
-                    android:text="@string/vitamin_e"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@android:color/white"
-                    android:textSize="11sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_vitaminETitle"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:fontFamily="@font/inter_light"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/vitamin_e"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="11sp" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
-            <RelativeLayout
-                android:layout_width="132dp"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="4dp"
-                android:background="@drawable/bg_bottom_navigation">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="132dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginHorizontal="4dp"-->
+<!--                android:background="@drawable/bg_bottom_navigation">-->
 
-                <TextView
-                    android:id="@+id/tv_vitaminK"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Value"
-                    android:layout_above="@id/tv_vitaminKTitle"
-                    android:textColor="@android:color/white"
-                    android:fontFamily="@font/inter_bold"
-                    android:textSize="32sp"
-                    android:gravity="center"
-                    />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_vitaminK"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Value"-->
+<!--                    android:layout_above="@id/tv_vitaminKTitle"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:fontFamily="@font/inter_bold"-->
+<!--                    android:textSize="32sp"-->
+<!--                    android:gravity="center"-->
+<!--                    />-->
 
-                <TextView
-                    android:id="@+id/tv_vitaminKTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/inter_light"
-                    android:gravity="center"
-                    android:text="@string/vitamin_k"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@android:color/white"
-                    android:textSize="11sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_vitaminKTitle"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:fontFamily="@font/inter_light"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/vitamin_k"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="11sp" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
-            <RelativeLayout
-                android:layout_width="132dp"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="4dp"
-                android:background="@drawable/bg_bottom_navigation">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="132dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginHorizontal="4dp"-->
+<!--                android:background="@drawable/bg_bottom_navigation">-->
 
-                <TextView
-                    android:id="@+id/tv_vitaminC"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Value"
-                    android:layout_above="@id/tv_vitaminCTitle"
-                    android:textColor="@android:color/white"
-                    android:fontFamily="@font/inter_bold"
-                    android:textSize="32sp"
-                    android:gravity="center"
-                    />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_vitaminC"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Value"-->
+<!--                    android:layout_above="@id/tv_vitaminCTitle"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:fontFamily="@font/inter_bold"-->
+<!--                    android:textSize="32sp"-->
+<!--                    android:gravity="center"-->
+<!--                    />-->
 
-                <TextView
-                    android:id="@+id/tv_vitaminCTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/inter_light"
-                    android:gravity="center"
-                    android:text="@string/vitamin_c"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@android:color/white"
-                    android:textSize="11sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_vitaminCTitle"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:fontFamily="@font/inter_light"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/vitamin_c"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="11sp" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
-            <RelativeLayout
-                android:layout_width="132dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/bg_bottom_navigation">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="132dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginStart="4dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:background="@drawable/bg_bottom_navigation">-->
 
-                <TextView
-                    android:id="@+id/tv_vitaminB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Value"
-                    android:layout_above="@id/tv_vitaminBTitle"
-                    android:textColor="@android:color/white"
-                    android:fontFamily="@font/inter_bold"
-                    android:textSize="32sp"
-                    android:gravity="center"
-                    />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_vitaminB"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Value"-->
+<!--                    android:layout_above="@id/tv_vitaminBTitle"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:fontFamily="@font/inter_bold"-->
+<!--                    android:textSize="32sp"-->
+<!--                    android:gravity="center"-->
+<!--                    />-->
 
-                <TextView
-                    android:id="@+id/tv_vitaminBTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/inter_light"
-                    android:gravity="center"
-                    android:text="@string/vitamin_b"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@android:color/white"
-                    android:textSize="11sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_vitaminBTitle"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:fontFamily="@font/inter_light"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/vitamin_b"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="11sp" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
             <!-- Add more RelativeLayouts for other pairs of TextViews -->
 
