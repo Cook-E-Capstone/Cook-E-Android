@@ -31,7 +31,7 @@ class CommunityPostAdapter(private val listPost : List<CommunityItem>) : Recycle
             .centerCrop()
             .into(holder.ivItem)
 
-        holder.ivItem.setOnClickListener {
+        holder.itemView.setOnClickListener {
             val intentDetail = Intent(holder.itemView.context, DetailPostActivity::class.java)
             intentDetail.putExtra("extra_story_id", id)
 
