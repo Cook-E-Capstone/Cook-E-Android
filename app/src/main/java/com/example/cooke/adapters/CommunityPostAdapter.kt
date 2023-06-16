@@ -24,8 +24,10 @@ class CommunityPostAdapter(private val listPost : List<CommunityItem>) : Recycle
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val (createdAt, pathfile, id, title, userID, content, updatedAt) = listPost[position]
         Log.d("MODAN", "onBindViewHolder: $pathfile")
-        holder.tvAuthorItem.text = title
-        holder.tvDateItem.text = content
+        val postTitle = if (title?.length!! > 18) "${title.take(18)}..." else title
+        val postDesc = if (content?.length!! > 160) "${content.take(160)}..." else content
+        holder.tvAuthorItem.text = postTitle
+        holder.tvDateItem.text = postDesc
         Glide.with(holder.itemView.context)
             .load(pathfile)
             .centerCrop()
