@@ -3,7 +3,7 @@
 Cook-E is a mobile application that aims to simplify cooking by providing users with recipes based on the ingredients they have on hand and their health condition persona. With the current trend towards healthy eating, many people want to cook their meals at home using fresh ingredients.
 
 
-## App Instalation
+## App Installation
 - [Download Here](https://drive.google.com/uc?export=download&id=10XognSIoon5P6EPYXw4GtdUifEi4NsKx)
 
 
