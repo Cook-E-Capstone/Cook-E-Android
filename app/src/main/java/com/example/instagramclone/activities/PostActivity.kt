@@ -75,14 +75,6 @@ class PostActivity : AppCompatActivity() {
         binding = ActivityPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        if (!allPermissionsGranted()) {
-//            ActivityCompat.requestPermissions(
-//                this,
-//                REQUIRED_PERMISSIONS,
-//                REQUEST_CODE_PERMISSIONS
-//            )
-//        }
-
         Log.d("TEST", "${binding.previewImageView.drawable == null}")
 
 

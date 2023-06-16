@@ -47,7 +47,7 @@ class PasswordEditText : AppCompatEditText, View.OnTouchListener {
             }
             override fun afterTextChanged(s: Editable) {
                 error = if (s.length < 8) {
-                    "Password length must be more than 8 characters"
+                    "Password must be at least eight characters long, contain lower case, uppercase, and numbers"
                 } else {
                     null
                 }
