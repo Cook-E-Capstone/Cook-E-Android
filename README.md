@@ -4,7 +4,7 @@ Cook-E is a mobile application that aims to simplify cooking by providing users 
 
 
 ## App Installation
-- [Download Here](https://drive.google.com/uc?export=download&id=10XognSIoon5P6EPYXw4GtdUifEi4NsKx)
+- [v1.0.0-alpha](https://drive.google.com/uc?export=download&id=1QY1JafYsRazOhfYzxUAhXkC-J4dFR_E2)
 
 
 ## Setup for Development
