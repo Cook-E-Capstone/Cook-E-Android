@@ -186,11 +186,11 @@ class MainActivity : AppCompatActivity() {
 
         // on below line we are adding data to our image url array list.
         imageUrl =
-            (imageUrl + "https://practice.geeksforgeeks.org/_next/image?url=https%3A%2F%2Fmedia.geeksforgeeks.org%2Fimg-practice%2Fbanner%2Fdsa-self-paced-thumbnail.png&w=1920&q=75") as ArrayList<String>
+            (imageUrl + "https://storage.googleapis.com/cooke_storage/android/cooke-logo.png") as ArrayList<String>
         imageUrl =
-            (imageUrl + "https://practice.geeksforgeeks.org/_next/image?url=https%3A%2F%2Fmedia.geeksforgeeks.org%2Fimg-practice%2Fbanner%2Fdata-science-live-thumbnail.png&w=1920&q=75") as ArrayList<String>
+            (imageUrl + "https://storage.googleapis.com/cooke_storage/android/cooke-logo.png") as ArrayList<String>
         imageUrl =
-            (imageUrl + "https://practice.geeksforgeeks.org/_next/image?url=https%3A%2F%2Fmedia.geeksforgeeks.org%2Fimg-practice%2Fbanner%2Ffull-stack-node-thumbnail.png&w=1920&q=75") as ArrayList<String>
+            (imageUrl + "https://storage.googleapis.com/cooke_storage/android/cooke-logo.png") as ArrayList<String>
 
         // on below line we are initializing our
         // slider adapter and adding our list to it.

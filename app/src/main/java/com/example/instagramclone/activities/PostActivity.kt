@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -136,6 +137,14 @@ class PostActivity : AppCompatActivity() {
         }
 
         binding.ivUploadFromGallery.setOnClickListener { startGallery() }
+
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finishAffinity()
+            }
+        }
+
+        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
     }
 
 //    private fun showScanButton(isImageExist: Boolean) {
