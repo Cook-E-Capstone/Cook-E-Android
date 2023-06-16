@@ -85,7 +85,6 @@ class PostActivity : AppCompatActivity() {
 
         Log.d("TEST", "${binding.previewImageView.drawable == null}")
 
-//        showScanButton(binding.previewImageView.drawable == null)
 
 
         binding.cameraXButton.setOnClickListener { startCameraX() }
@@ -93,17 +92,8 @@ class PostActivity : AppCompatActivity() {
         val pref = UserPreferences.getInstance(dataStore)
         val authViewModel = ViewModelProvider(this, ViewModelFactory(pref, this,""))[AuthViewModel::class.java]
 
-//        authViewModel.getAuthSettings().observe(this) { authData ->
-//            binding.uploadButton.setOnClickListener { uploadImage(authData.token) }
-//        }
-
         authViewModel.getAuthSettings().observe(this) { authData ->
-            binding.uploadButton.setOnClickListener {
-                // Disable the button
-                binding.uploadButton.isEnabled = false
-                // Call the uploadImage function
-                uploadImage(authData.token)
-            }
+            binding.uploadButton.setOnClickListener { uploadImage(authData.token) }
         }
 
         binding.bottomNavigationView2.actionScan.setColorFilter(
