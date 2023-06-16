@@ -146,7 +146,7 @@
                     android:text="@string/kalori"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -178,7 +178,7 @@
                     android:text="@string/lemak"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -210,7 +210,7 @@
                     android:text="@string/sodium"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -242,7 +242,7 @@
                     android:text="@string/potasium"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -274,7 +274,7 @@
                     android:text="@string/serat"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -306,7 +306,7 @@
                     android:text="@string/gula"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -338,7 +338,7 @@
                     android:text="@string/protein"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -370,7 +370,7 @@
                     android:text="@string/kalsium"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -402,7 +402,7 @@
                     android:text="@string/zat_besi"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -434,7 +434,7 @@
                     android:text="@string/vitamin_a"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -466,7 +466,7 @@
                     android:text="@string/vitamin_e"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -498,7 +498,7 @@
                     android:text="@string/vitamin_k"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -530,7 +530,7 @@
                     android:text="@string/vitamin_c"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
@@ -563,7 +563,7 @@
                     android:text="@string/vitamin_b"
                     android:layout_marginBottom="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
