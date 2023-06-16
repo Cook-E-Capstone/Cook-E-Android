@@ -35,7 +35,7 @@
                     android:layout_weight=".50"
                     android:fontFamily="@font/inter_semibold"
                     android:textAlignment="center"
-                    android:text="Nutritionist"
+                    android:text="@string/nutritionist"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
