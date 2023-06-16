@@ -5,21 +5,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activities.CommunityActivity"
+    tools:context="com.example.cooke.activities.CommunityActivity"
     >
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:background="@color/red"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/AppTheme">
@@ -35,16 +35,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".50"
-                    android:fontFamily="@font/mogra"
-                    android:text="@string/app_name"
-                    android:textColor="@color/black"
-                    android:textSize="24sp" />
-                <Button
-                    android:id="@+id/action_logout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/logout_button_text"/>
-
+                    android:fontFamily="@font/inter_semibold"
+                    android:textAlignment="center"
+                    android:text="@string/community"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
             </LinearLayout>
 
 
@@ -68,6 +63,7 @@
         android:id="@+id/rv_story"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -76,57 +72,26 @@
         app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/item_row_post" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <include
         android:id="@+id/bottomNavigationView2"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/bg_bottom_navigation"
-        app:layout_constraintBottom_toBottomOf="parent">
+        layout="@layout/view_bottom_navigation2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageButton
-                android:id="@+id/action_map"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_map"
-                app:tint="@color/white" />
-
-            <ImageButton
-                android:id="@+id/my_floating_button"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginHorizontal="90dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_add"
-                app:tint="@color/white" />
-
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_user"
-                app:tint="@color/white" />
-        </LinearLayout>
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/action_post"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end|center"
-        android:layout_margin="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="72dp"
         android:backgroundTint="@color/red"
-        android:src="@drawable/ic_add"
+        android:src="@drawable/ic_plus"
         android:tintMode="@color/white"
         app:fabSize="normal"
         android:contentDescription="@string/content_desc_post_button"

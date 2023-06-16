@@ -1,11 +1,11 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.InstagramClone" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.CookE" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimary">@color/red</item>
     </style>
 
-    <style name="Theme.InstagramClone" parent="Base.Theme.InstagramClone" />
+    <style name="Theme.CookE" parent="Base.Theme.CookE" />
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->

@@ -5,8 +5,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activities.RecipeActivity"
+    tools:context="com.example.cooke.activities.RecipeActivity"
     >
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:background="@color/red"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/AppTheme">
@@ -37,62 +38,22 @@
                     android:layout_weight=".50"
                     android:fontFamily="@font/inter_semibold"
                     android:textAlignment="center"
-                    android:text="Recipe"
+                    android:text="@string/recipe"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
-<!--    <FrameLayout-->
-<!--        android:id="@+id/search_edit_text"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/appBarLayout"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/rv_story"-->
-<!--        android:layout_margin="16dp">-->
-
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:cardElevation="8dp">-->
-
-<!--            <EditText-->
-<!--                android:layout_width="match_parent"-->
-<!--            android:layout_height="48dp"-->
-<!--            android:paddingHorizontal="8dp"-->
-<!--                    android:layout_marginStart="24dp"-->
-<!--                    android:layout_marginBottom="16dp"-->
-<!--                    android:layout_marginTop="16dp"-->
-<!--            android:layout_marginEnd="24dp"-->
-<!--                android:drawableLeft="@drawable/ic_search"-->
-<!--                android:drawablePadding="8dp"-->
-<!--                android:hint="Search"-->
-<!--                android:inputType="text"-->
-<!--                android:background="@null" />-->
-
-<!--        </androidx.cardview.widget.CardView>-->
-
-<!--        <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="8dp"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            android:src="@drawable/shadow" />-->
-
-<!--    </FrameLayout>-->
-
     <TextView
         android:id="@+id/tv_header"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Mau Makan Apa Hari Ini?"
-        android:paddingHorizontal="24dp"
-
+        android:text="@string/mau_makan_apa_hari_ini"
+        android:paddingHorizontal="16dp"
         android:fontFamily="@font/inter_bold"
         android:textSize="20sp"
         android:textColor="@color/red"
@@ -105,38 +66,37 @@
 
     <EditText
         android:id="@+id/search_edit_text"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:paddingHorizontal="8dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center_vertical"
         android:drawablePadding="8dp"
         android:hint="Input keywords (ex: telur, ayam)"
         android:inputType="text"
-        android:background="@drawable/edit_text_background"
+        android:background="@drawable/search_view_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_header"
         app:layout_constraintBottom_toTopOf="@id/rv_story"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <ImageButton
         android:id="@+id/action_search"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="12dp"
         android:layout_gravity="start"
-        android:layout_marginStart="12dp"
         android:scaleType="fitCenter"
+        android:layout_marginEnd="4dp"
         android:background="@null"
         android:src="@drawable/ic_search"
-        app:layout_constraintTop_toBottomOf="@id/tv_header"
-        app:layout_constraintBottom_toTopOf="@id/rv_story"
-        app:layout_constraintStart_toEndOf="@id/search_edit_text"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/search_edit_text"
+        app:layout_constraintBottom_toBottomOf="@id/search_edit_text"
+        app:layout_constraintEnd_toEndOf="@id/search_edit_text"
         app:tint="#2C323F" />
 
 
@@ -146,56 +106,24 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@null"
+        android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_edit_text"
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_row_recipe" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <include
         android:id="@+id/bottomNavigationView2"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/bg_bottom_navigation"
-        app:layout_constraintBottom_toBottomOf="parent">
+        layout="@layout/view_bottom_navigation2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
 
-            <ImageButton
-                android:id="@+id/action_map"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_map"
-                app:tint="@color/white" />
-
-            <ImageButton
-                android:id="@+id/my_floating_button"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginHorizontal="90dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_add"
-                app:tint="@color/white" />
-
-            <ImageButton
-                android:id="@+id/action_profile"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_user"
-                app:tint="@color/white" />
-        </LinearLayout>
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
