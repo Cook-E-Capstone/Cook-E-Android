@@ -17,5 +17,5 @@ dependencyResolutionManagement {
         // Add any repositories you would be adding to all projects here
     }
 }
-rootProject.name = "InstagramClone"
+rootProject.name = "CookE"
 include ':app'

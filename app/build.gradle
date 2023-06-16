@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.instagramclone'
+    namespace 'com.example.cooke'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.instagramclone"
+        applicationId "com.example.cooke"
         minSdk 21
         targetSdk 33
         versionCode 1

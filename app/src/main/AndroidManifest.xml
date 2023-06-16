@@ -33,10 +33,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.InstagramClone"
+        android:theme="@style/Theme.CookE"
         tools:targetApi="31">
         <activity
-            android:name=".activities.SplashActivity"
+            android:name="com.example.cooke.activities.SplashActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,33 +45,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.NutritionistActivity"
+            android:name="com.example.cooke.activities.NutritionistActivity"
             android:exported="false"
             android:label="@string/title_activity_nutritionist"
-            android:theme="@style/Theme.InstagramClone" />
+            android:theme="@style/Theme.CookE" />
         <activity
-            android:name=".activities.ProfileActivity"
+            android:name="com.example.cooke.activities.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.DetailRecipeActivity"
+            android:name="com.example.cooke.activities.DetailRecipeActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.RecipeActivity"
+            android:name="com.example.cooke.activities.RecipeActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.DetailPostActivity"
+            android:name="com.example.cooke.activities.DetailPostActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.CommunityPostActivity"
+            android:name="com.example.cooke.activities.CommunityPostActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.CommunityCameraActivity"
+            android:name="com.example.cooke.activities.CommunityCameraActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.CommunityActivity"
+            android:name="com.example.cooke.activities.CommunityActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.ResultActivity"
+            android:name="com.example.cooke.activities.ResultActivity"
             android:exported="false" />
 
         <meta-data
@@ -79,28 +79,28 @@
             android:value="AIzaSyCPYDdByS0tnqkQMfeh7cqyNXKtWB5bjbo" />
 
         <activity
-            android:name=".activities.CameraActivity"
+            android:name="com.example.cooke.activities.CameraActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.PostActivity"
+            android:name="com.example.cooke.activities.PostActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.DetailActivity"
+            android:name="com.example.cooke.activities.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.RegisterActivity"
+            android:name="com.example.cooke.activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.LoginActivity"
+            android:name="com.example.cooke.activities.LoginActivity"
             android:exported="false" />
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.example.cooke.activities.MainActivity"
             android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.instagramclone"
+            android:authorities="com.example.cooke"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
