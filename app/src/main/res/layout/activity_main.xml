@@ -124,6 +124,22 @@
         app:sliderScrollTimeInSec="1" />
 
 
+    <TextView
+        android:id="@+id/tv_header_popular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="22dp"
+        android:fontFamily="@font/inter_semibold"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintBottom_toTopOf="@id/rv_story"
+        app:layout_constraintTop_toBottomOf="@id/slider"
+        android:text="Popular Posts"
+        />
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_story"
@@ -134,7 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slider"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header_popular"
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_row_post" />
 

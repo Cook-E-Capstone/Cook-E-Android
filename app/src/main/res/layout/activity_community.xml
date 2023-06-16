@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv_header">
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -91,7 +91,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="72dp"
         android:backgroundTint="@color/red"
-        android:src="@drawable/ic_add"
+        android:src="@drawable/ic_plus"
         android:tintMode="@color/white"
         app:fabSize="normal"
         android:contentDescription="@string/content_desc_post_button"
