@@ -44,7 +44,7 @@
                         android:layout_weight=".50"
                         android:fontFamily="@font/inter_semibold"
                         android:textAlignment="center"
-                        android:text="Recipe"
+                        android:text="@string/recipe"
                         android:textColor="@color/white"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -112,7 +112,7 @@
 
 
                 <RelativeLayout
-                    android:layout_width="96dp"
+                    android:layout_width="116dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="4dp"
@@ -145,7 +145,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="96dp"
+                    android:layout_width="116dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="4dp"
                     android:background="@drawable/bg_bottom_navigation">
@@ -177,7 +177,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="96dp"
+                    android:layout_width="116dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="4dp"
                     android:background="@drawable/bg_bottom_navigation">
@@ -209,7 +209,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="96dp"
+                    android:layout_width="116dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="4dp"
                     android:background="@drawable/bg_bottom_navigation">
@@ -241,7 +241,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="96dp"
+                    android:layout_width="116dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="4dp"
                     android:background="@drawable/bg_bottom_navigation">
@@ -273,7 +273,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="96dp"
+                    android:layout_width="116dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="4dp"
                     android:layout_marginEnd="16dp"
@@ -317,7 +317,7 @@
             android:layout_marginTop="16dp"
 
             android:layout_marginHorizontal="16dp"
-            android:text="Portion"
+            android:text="@string/portion"
             android:fontFamily="@font/inter_bold"
             android:textSize="16sp"
             android:textColor="?attr/colorPrimary"
@@ -342,7 +342,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:textSize="16sp"
-            android:text="Bahan"
+            android:text="@string/ingredients"
             android:fontFamily="@font/inter_bold"
             android:textColor="?attr/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"
@@ -366,7 +366,7 @@
             android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Langkah"
+            android:text="@string/steps"
             android:fontFamily="@font/inter_bold"
             android:textColor="?attr/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"

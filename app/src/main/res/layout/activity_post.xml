@@ -13,7 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv_header">
+        app:layout_constraintBottom_toTopOf="@id/previewImageView">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -36,7 +36,7 @@
                     android:layout_weight=".50"
                     android:fontFamily="@font/inter_semibold"
                     android:textAlignment="center"
-                    android:text="Scan"
+                    android:text="@string/scan"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Scan now!"
+        android:text="@string/scan_now"
         app:layout_constraintTop_toTopOf="@id/cameraXButton"
         app:layout_constraintBottom_toBottomOf="@id/cameraXButton"
         app:layout_constraintEnd_toEndOf="parent"

@@ -35,7 +35,7 @@
                     android:layout_weight=".50"
                     android:fontFamily="@font/inter_semibold"
                     android:textAlignment="center"
-                    android:text="Post"
+                    android:text="@string/post"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -76,7 +76,7 @@
         android:id="@+id/ed_title"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:hint="Title"
+        android:hint="@string/title"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
@@ -140,7 +140,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
-        android:text="Post"
+        android:text="@string/post"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ed_description"

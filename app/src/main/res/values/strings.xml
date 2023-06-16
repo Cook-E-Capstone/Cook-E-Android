@@ -19,17 +19,17 @@
     <string name="text_to_login">Already have an account?&#160;</string>
     <string name="title_activity_maps">Where are them?</string>
     <string name="retry">Retry</string>
-    <string name="kalori">Kalori</string>
-    <string name="lemak">Lemak</string>
-    <string name="karbohidrat">Karbohidrat</string>
-    <string name="protein">Protein</string>
-    <string name="serat">Serat</string>
-    <string name="kolesterol">Kolesterol</string>
-    <string name="sodium">Sodium</string>
-    <string name="potasium">Potasium</string>
-    <string name="gula">Gula</string>
-    <string name="kalsium">Kalsium</string>
-    <string name="zat_besi">Zat Besi</string>
+    <string name="kalori">Calorie (kkal)</string>
+    <string name="lemak">Fat (g)</string>
+    <string name="karbohidrat">Carbohydrate (g)</string>
+    <string name="protein">Protein (g)</string>
+    <string name="serat">Fiber (g)</string>
+    <string name="kolesterol">Cholesterol (mg)</string>
+    <string name="sodium">Sodium (mg)</string>
+    <string name="potasium">Potassium (mg)</string>
+    <string name="gula">Sugar (g)</string>
+    <string name="kalsium">Calcium (mg)</string>
+    <string name="zat_besi">Iron (mg)</string>
     <string name="vitamin_a">Vitamin A</string>
     <string name="vitamin_b">Vitamin B</string>
     <string name="vitamin_e">Vitamin E</string>
@@ -79,4 +79,21 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="mau_makan_apa_hari_ini">What do you want to eat today?</string>
+    <string name="community">Community</string>
+    <string name="post">Post</string>
+    <string name="title">Title</string>
+    <string name="recipe">Recipe</string>
+    <string name="portion">Portion</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="steps">Steps</string>
+    <string name="popular_posts">Popular Posts</string>
+    <string name="coming_soon">Something exciting is coming soon!</string>
+    <string name="scan">Scan</string>
+    <string name="scan_now">Scan now!</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="your_username">Your username</string>
+    <string name="result">Result</string>
+    <string name="description">Description</string>
 </resources>

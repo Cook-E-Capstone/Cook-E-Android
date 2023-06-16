@@ -38,7 +38,7 @@
                     android:layout_weight=".50"
                     android:fontFamily="@font/inter_semibold"
                     android:textAlignment="center"
-                    android:text="Recipe"
+                    android:text="@string/recipe"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -52,7 +52,7 @@
         android:layout_marginTop="16dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Mau Makan Apa Hari Ini?"
+        android:text="@string/mau_makan_apa_hari_ini"
         android:paddingHorizontal="16dp"
         android:fontFamily="@font/inter_bold"
         android:textSize="20sp"

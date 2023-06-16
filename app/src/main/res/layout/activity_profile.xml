@@ -37,7 +37,7 @@
                     android:layout_weight=".50"
                     android:fontFamily="@font/inter_semibold"
                     android:textAlignment="center"
-                    android:text="Profile"
+                    android:text="@string/profile"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -97,7 +97,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Logout"
+        android:text="@string/logout"
         android:paddingVertical="14dp"
         android:layout_marginHorizontal="23dp"
         android:textColor="@color/white"
