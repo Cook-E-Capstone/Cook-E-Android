@@ -103,8 +103,14 @@ class CommunityPostActivity : AppCompatActivity() {
         )
 
         authViewModel.getAuthSettings().observe(this) { authData ->
-            binding.uploadButton.setOnClickListener { uploadImage(authData.token) }
+            binding.uploadButton.setOnClickListener {
+                // Disable the button
+                binding.uploadButton.isEnabled = false
+                // Call the uploadImage function
+                uploadImage(authData.token)
+            }
         }
+
     }
 
     private fun startCameraX() {
