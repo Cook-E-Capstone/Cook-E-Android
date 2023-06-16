@@ -112,7 +112,7 @@
 
 
                 <RelativeLayout
-                    android:layout_width="116dp"
+                    android:layout_width="132dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="4dp"
@@ -145,7 +145,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="116dp"
+                    android:layout_width="132dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="4dp"
                     android:background="@drawable/bg_bottom_navigation">
@@ -177,7 +177,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="116dp"
+                    android:layout_width="132dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="4dp"
                     android:background="@drawable/bg_bottom_navigation">
@@ -209,7 +209,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="116dp"
+                    android:layout_width="132dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="4dp"
                     android:background="@drawable/bg_bottom_navigation">
@@ -241,7 +241,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="116dp"
+                    android:layout_width="132dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="4dp"
                     android:background="@drawable/bg_bottom_navigation">
@@ -273,7 +273,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="116dp"
+                    android:layout_width="132dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="4dp"
                     android:layout_marginEnd="16dp"
