@@ -39,16 +39,6 @@
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
                     android:layout_height="wrap_content"/>
-                <ImageButton
-                    android:id="@+id/action_profile"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:padding="12dp"
-                    android:background="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_person"
-                    app:tint="@color/white"
-                    android:contentDescription="profile_button" />
 
 
             </LinearLayout>
@@ -56,6 +46,20 @@
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageButton
+        android:id="@+id/action_profile"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:padding="12dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/appBarLayout"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_person"
+        app:tint="@color/white"
+        android:contentDescription="profile_button" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
