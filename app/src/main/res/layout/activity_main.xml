@@ -73,40 +73,13 @@
         android:indeterminateTint="@color/blue"
         android:visibility="gone"/>
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        app:cardCornerRadius="6dp"-->
-<!--        android:layout_margin="16dp"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
-
-<!--        <com.smarteist.autoimageslider.SliderView-->
-<!--            android:id="@+id/imageSlider"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="300dp"-->
-<!--            app:sliderAnimationDuration="600"-->
-<!--            app:sliderAutoCycleDirection="back_and_forth"-->
-<!--            app:sliderAutoCycleEnabled="true"-->
-<!--            app:sliderIndicatorAnimationDuration="600"-->
-<!--            app:sliderIndicatorGravity="center_horizontal|bottom"-->
-<!--            app:sliderIndicatorMargin="15dp"-->
-<!--            app:sliderIndicatorOrientation="horizontal"-->
-<!--            app:sliderIndicatorPadding="3dp"-->
-<!--            app:sliderIndicatorRadius="2dp"-->
-<!--            app:sliderIndicatorSelectedColor="#5A5A5A"-->
-<!--            app:sliderIndicatorUnselectedColor="#FFF"-->
-<!--            app:sliderScrollTimeInSec="1"-->
-<!--            app:sliderStartAutoCycle="true" />-->
-
-<!--    </androidx.cardview.widget.CardView>-->
-
-
-
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/slider"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
-        app:layout_constraintBottom_toTopOf="@id/rv_story"
+        app:layout_constraintBottom_toTopOf="@id/tv_header_popular"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="24dp"
         android:layout_centerInParent="true"
         app:sliderAnimationDuration="600"
         app:sliderAutoCycleDirection="right"
@@ -118,7 +91,7 @@
         app:sliderIndicatorPadding="3dp"
         app:sliderIndicatorRadius="2dp"
         app:sliderIndicatorSelectedColor="#DF2E38"
-        app:sliderIndicatorUnselectedColor="#FFF"
+        app:sliderIndicatorUnselectedColor="@color/gray_300"
         app:sliderIndicatorMarginTop="100dp"
         app:sliderScrollTimeInSec="1" />
 
@@ -132,13 +105,10 @@
         android:textColor="@color/red"
         android:textSize="16sp"
         android:layout_marginTop="20dp"
-
         app:layout_constraintBottom_toTopOf="@id/rv_story"
         app:layout_constraintTop_toBottomOf="@id/slider"
         android:text="Popular Posts"
         />
-
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_story"
@@ -162,159 +132,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:id="@+id/bottomNavigationView2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="56dp"-->
-<!--        android:background="@color/white"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        >-->
-<!--        <ImageButton-->
-<!--            android:id="@+id/action_home"-->
-<!--            android:layout_width="56dp"-->
-<!--            android:layout_height="56dp"-->
-<!--            android:padding="12dp"-->
-<!--            android:layout_marginStart="12dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@id/bottomNavigationView2"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView2"-->
-<!--            android:background="@null"-->
-<!--            android:foreground="?android:attr/selectableItemBackgroundBorderless"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            android:src="@drawable/ic_home"-->
-<!--            app:tint="?attr/colorPrimary"-->
-<!--            android:contentDescription="home button" />-->
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/action_community"-->
-<!--            android:layout_width="56dp"-->
-<!--            android:layout_height="56dp"-->
-<!--            android:padding="12dp"-->
-<!--            app:layout_constraintStart_toEndOf="@id/action_home"-->
-<!--            app:layout_constraintEnd_toStartOf="@id/action_scan"-->
-<!--            app:layout_constraintTop_toTopOf="@id/bottomNavigationView2"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView2"-->
-<!--            android:background="@null"-->
-<!--            android:foreground="?android:attr/selectableItemBackgroundBorderless"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            android:src="@drawable/ic_community"-->
-<!--            app:tint="@color/black"-->
-<!--            android:contentDescription="community button" />-->
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/action_scan"-->
-<!--            android:layout_width="56dp"-->
-<!--            android:layout_height="56dp"-->
-<!--            android:padding="12dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@id/bottomNavigationView2"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView2"-->
-<!--            android:layout_marginHorizontal="90dp"-->
-<!--            android:background="@null"-->
-<!--            android:foreground="?android:attr/selectableItemBackgroundBorderless"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            android:src="@drawable/ic_camera_lens"-->
-<!--            app:tint="@color/black"-->
-<!--            android:contentDescription="scan button" />-->
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/action_recipe"-->
-<!--            android:layout_width="56dp"-->
-<!--            android:layout_height="56dp"-->
-<!--            android:padding="12dp"-->
-<!--            app:layout_constraintStart_toEndOf="@id/action_scan"-->
-<!--            app:layout_constraintEnd_toStartOf="@id/action_nutritionist"-->
-<!--            app:layout_constraintTop_toTopOf="@id/bottomNavigationView2"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView2"-->
-<!--            android:background="@null"-->
-<!--            android:foreground="?android:attr/selectableItemBackgroundBorderless"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            android:src="@drawable/ic_recipe"-->
-<!--            app:tint="@color/black"-->
-<!--            android:contentDescription="recipe button" />-->
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/action_nutritionist"-->
-<!--            android:layout_width="56dp"-->
-<!--            android:layout_height="56dp"-->
-<!--            android:padding="12dp"-->
-<!--            android:layout_marginEnd="12dp"-->
-<!--            android:background="@null"-->
-<!--            android:foreground="?android:attr/selectableItemBackgroundBorderless"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@id/bottomNavigationView2"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView2"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            android:src="@drawable/ic_nutritionist"-->
-<!--            app:tint="@color/black"-->
-<!--            android:contentDescription="nutritionist button" />-->
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottomNavigationView2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="56dp"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:background="@drawable/bg_bottom_navigation"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent">-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:gravity="center">-->
-
-<!--            <ImageButton-->
-<!--                android:id="@+id/action_home"-->
-<!--                android:layout_width="56dp"-->
-<!--                android:layout_height="56dp"-->
-<!--                android:padding="12dp"-->
-<!--                android:background="@null"-->
-<!--                android:scaleType="fitCenter"-->
-<!--                android:src="@drawable/ic_map"-->
-<!--                app:tint="@color/white" />-->
-
-<!--            <ImageButton-->
-<!--                android:id="@+id/action_community"-->
-<!--                android:layout_width="56dp"-->
-<!--                android:layout_height="56dp"-->
-<!--                android:padding="12dp"-->
-<!--                android:background="@null"-->
-<!--                android:scaleType="fitCenter"-->
-<!--                android:src="@drawable/ic_user"-->
-<!--                app:tint="@color/white" />-->
-
-<!--            <ImageButton-->
-<!--                android:id="@+id/action_scan"-->
-<!--                android:layout_width="56dp"-->
-<!--                android:layout_height="56dp"-->
-<!--                android:padding="12dp"-->
-<!--                android:layout_marginHorizontal="90dp"-->
-<!--                android:background="@null"-->
-<!--                android:scaleType="fitCenter"-->
-<!--                android:src="@drawable/ic_add"-->
-<!--                app:tint="@color/white" />-->
-
-<!--            <ImageButton-->
-<!--                android:id="@+id/action_recipe"-->
-<!--                android:layout_width="56dp"-->
-<!--                android:layout_height="56dp"-->
-<!--                android:padding="12dp"-->
-<!--                android:background="@null"-->
-<!--                android:scaleType="fitCenter"-->
-<!--                android:src="@drawable/ic_user"-->
-<!--                app:tint="@color/white" />-->
-
-<!--            <ImageButton-->
-<!--                android:id="@+id/action_profile"-->
-<!--                android:layout_width="56dp"-->
-<!--                android:layout_height="56dp"-->
-<!--                android:padding="12dp"-->
-<!--                android:background="@null"-->
-<!--                android:scaleType="fitCenter"-->
-<!--                android:src="@drawable/ic_user"-->
-<!--                app:tint="@color/white" />-->
-<!--        </LinearLayout>-->
-<!--    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
