@@ -164,7 +164,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.bottomNavigationView2.actionNutritionist.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
+            val intent = Intent(this, NutritionistActivity::class.java)
             startActivity(intent)
         }
 
