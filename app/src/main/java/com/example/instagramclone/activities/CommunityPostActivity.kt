@@ -91,8 +91,8 @@ class CommunityPostActivity : AppCompatActivity() {
             )
         }
         binding.cameraXButton.setOnClickListener { startCameraX() }
-        binding.cameraButton.setOnClickListener { startTakePhoto() }
-        binding.galleryButton.setOnClickListener { startGallery() }
+//        binding.cameraButton.setOnClickListener { startTakePhoto() }
+        binding.ivUploadFromGallery.setOnClickListener { startGallery() }
         binding.ivBack.setOnClickListener {
             finish()
         }
